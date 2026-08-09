@@ -62,6 +62,7 @@ public class PlayerMove : MonoBehaviour
             MoveDirection.y += Glavity * Time.deltaTime * Time.deltaTime / 2;
         }
         
+        //移動の実施
         characterController.Move(MoveDirection);
     }
 }
