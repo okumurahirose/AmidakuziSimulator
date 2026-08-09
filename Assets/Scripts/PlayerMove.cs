@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -6,7 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     //上から順に、最大速度、角速度、加速度、重力
     [SerializeField] private float MaxMovingSpeed; //[m/s]
-    [SerializeField] private float RotationSpeed; //[deg/s]
+    public float RotationSpeed; //[deg/s] （CameraFollowingで参照する）
     [SerializeField] private float AccelerateSpeed; //[m/s^2]
     private const float Glavity = -9.81f;
 
@@ -38,10 +40,21 @@ public class PlayerMove : MonoBehaviour
             //設置しているため、重力によるy軸への影響はない
             MoveDirection.y = 0;
 
-            //z軸(前方向)への移動
+            //回転
+            if (Keyboard.current.aKey.isPressed)
+            {
+                transform.Rotate(0,-RotationSpeed * Time.deltaTime,0);
+            }
+            if (Keyboard.current.dKey.isPressed)
+            {
+                transform.Rotate(0,RotationSpeed * Time.deltaTime,0);
+            }
+
+            //移動
             MovingSpeed += AccelerateSpeed * Time.deltaTime;
             MovingSpeed = Mathf.Clamp(MovingSpeed,0,MaxMovingSpeed);
-            MoveDirection.z = MovingSpeed * Time.deltaTime;
+            MoveDirection.z = MovingSpeed * Time.deltaTime * Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
+            MoveDirection.x = MovingSpeed * Time.deltaTime * Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
             
         }
         else
