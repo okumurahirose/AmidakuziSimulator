@@ -4,6 +4,15 @@ using UnityEngine;
 public class SuccessJudging : MonoBehaviour
 {
     public int SuccessNum;
+    Animator StageAnimator;
+
+    void Start()
+    {
+        if(transform.tag == "EventTrigger")
+        {
+            StageAnimator = GetComponent<Animator>();
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,7 +25,8 @@ public class SuccessJudging : MonoBehaviour
             }
             else
             {
-                Debug.Log("No");
+                other.gameObject.SendMessage("ToStan");
+                StageAnimator.SetTrigger("RouteFalt");
             }
         }
     }
