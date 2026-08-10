@@ -55,7 +55,7 @@ public class StageGenerating : MonoBehaviour
             hantei = (int)KindofStage.CornerLeft;
         }
         //最初、最後のステージではなく、端のステージではなかったら、特定の確率で曲がり角を選択
-        else if(row != 0 && row != NumRow && line != NumLine-1 && Random.Range(0,99) < CornerRate)
+        else if(row != 0 && row != NumRow-1 && line != NumLine-1 && Random.Range(0,99) < CornerRate)
         {
             hantei = (int)KindofStage.CornerRight;
         }
