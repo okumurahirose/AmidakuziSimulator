@@ -393,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8482896488428890819}
   - component: {fileID: 387945795375564903}
+  - component: {fileID: 2977756277568298548}
   m_Layer: 0
   m_Name: "\u30D7\u30EC\u30A4\u30E4\u30FC(\u4EEE)"
   m_TagString: Untagged
@@ -442,6 +443,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.3, z: 0}
+--- !u!114 &2977756277568298548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031643899029616262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bea517a16c92942870c0fa8de738f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuccessJudging
+  SuccessNum: 0
 --- !u!1 &6362891976881754623
 GameObject:
   m_ObjectHideFlags: 0

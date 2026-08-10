@@ -1,6 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class StageGenerating : MonoBehaviour
 {
@@ -11,11 +16,18 @@ public class StageGenerating : MonoBehaviour
     [SerializeField] private float CornerRate;
     private float StageWidth = 16.0f;
     private float StageLength = 20.0f;
+    private int[,] Route;
 
     //生成するステージの種類を列挙体として宣言　（配列Stages[]は直線、曲がり角、曲がり角受けの順に設定する）
     enum KindofStage
     {
         Straight,CornerRight,CornerLeft
+    }
+
+    void Awake()
+    {   
+        //あみだくじのルートを記録する配列
+        Route = new int[NumRow,NumLine];
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,12 +43,12 @@ public class StageGenerating : MonoBehaviour
                 //最初と最後のステージは直線
                 if(Row == 0 || Row == NumRow-1)
                 {
-                    GenerateStage(Line,Row,false);
+                    GenerateStage(Route,Line,Row,false);
                 }
                 //中間のステージを生成
                 else
                 {
-                    Corner = GenerateStage(Line,Row,Corner);
+                    Corner = GenerateStage(Route,Line,Row,Corner);
                 }
                 
             }
@@ -44,7 +56,7 @@ public class StageGenerating : MonoBehaviour
     }
 
     //ステージを生成する。引数は(列番号、行番号、隣のステージが曲がり角であるか)
-    bool GenerateStage(int line, int row, bool Corner)
+    bool GenerateStage(int[,] Route,int line, int row, bool Corner)
     {   
         //どの種類のステージを生成するか
         int hantei = (int)KindofStage.Straight;
@@ -70,6 +82,11 @@ public class StageGenerating : MonoBehaviour
         GeneratedStages.Add(target);
         target.transform.parent = transform;
 
+        //あみだくじのルートを確定させる
+        Route[row,line] = Routing(Route,line,row,hantei);
+        SuccessJudging judge = target.GetComponentInChildren<SuccessJudging>();
+        judge.SuccessNum = Route[row,line];
+
         //生成したステージが曲がり角だったらtrueを返す
         if(hantei == (int)KindofStage.CornerRight)
         {
@@ -78,5 +95,25 @@ public class StageGenerating : MonoBehaviour
 
         return false;
 
+    }
+
+    //あみだくじのルートを探る(最初のステージの列番号でルートを判別)
+    int Routing(int [,] Route,int line,int row,int hantei)
+    {
+       if(row == 0)
+            return line;
+
+        switch(hantei)
+        {
+            case 0:
+                return Route[row-1,line];
+            case 1:
+                return Route[row-1,line+1];
+            case 2:
+                return Route[row-1,line-1];
+
+            default :
+                return -1;
+        }
     }
 }
