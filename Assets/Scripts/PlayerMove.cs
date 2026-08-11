@@ -20,8 +20,6 @@ public class PlayerMove : MonoBehaviour
 
     public bool IsStan = false;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //コンポーネントの取得と各種変数の初期化
@@ -32,7 +30,6 @@ public class PlayerMove : MonoBehaviour
         CurrentPositon = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (IsStan)
@@ -76,6 +73,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //スタン状態にする
     void ToStan()
     {
         IsStan = true;

@@ -11,8 +11,8 @@ public class StageGenerating : MonoBehaviour
 {
     [SerializeField] private GameObject[] Stages;
     private List<GameObject> GeneratedStages = new List<GameObject>();
-    [SerializeField] private int NumLine;
-    [SerializeField] private int NumRow;
+    public int NumLine;
+    public int NumRow;
     [SerializeField] private float CornerRate;
     private float StageWidth = 16.0f;
     private float StageLength = 20.0f;
@@ -78,7 +78,6 @@ public class StageGenerating : MonoBehaviour
                                     new Vector3(-StageWidth * line,0,StageLength * row),
                                     Quaternion.identity
                                     );
-
         GeneratedStages.Add(target);
         target.transform.parent = transform;
 

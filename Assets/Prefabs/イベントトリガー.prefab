@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8699513382887210402}
   m_Layer: 0
   m_Name: "\u30A4\u30D9\u30F3\u30C8\u30C8\u30EA\u30AC\u30FC"
-  m_TagString: EventTrigger
+  m_TagString: SuccessJudger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
