@@ -167,7 +167,7 @@ MonoBehaviour:
   - {fileID: 3748529630202316237, guid: 362e0e4e574ea1741b6a24c0ae0f8a2b, type: 3}
   - {fileID: 637731056254738181, guid: ecba1d4f143bb174db11810dd176f810, type: 3}
   - {fileID: 4547054302491995431, guid: 86edbb976e3e6f842a200e7a87d8c9e4, type: 3}
-  NumLine: 6
+  NumLine: 10
   NumRow: 20
   CornerRate: 40
 --- !u!1 &398602587 stripped
@@ -288,6 +288,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &735501364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3148090519285334593, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
+  m_PrefabInstance: {fileID: 1900267359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &735501370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735501364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bea517a16c92942870c0fa8de738f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuccessJudging
+  SuccessNum: -1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +430,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3148090519285334593, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
+      propertyPath: m_TagString
+      value: SuccessJudger
+      objectReference: {fileID: 0}
     - target: {fileID: 6666550055902782476, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -457,13 +479,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 6687d8d20b8ea7e4b9ce20e04eb66a7b, type: 2}
     - target: {fileID: 7409185462773527596, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
+      propertyPath: ClosingSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409185462773527596, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
+      propertyPath: FirstPosition_Z
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409185462773527596, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
       propertyPath: stageGenerating
       value: 
       objectReference: {fileID: 267022420}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3148090519285334593, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 735501370}
   m_SourcePrefab: {fileID: 100100000, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
 --- !u!1001 &7001739226354571309
 PrefabInstance:

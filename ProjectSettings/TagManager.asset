@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - EventTrigger
+  - SuccessJudger
   layers:
   - Default
   - TransparentFX

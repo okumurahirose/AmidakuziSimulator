@@ -15,6 +15,7 @@ public class WallClosing : MonoBehaviour
     private float WallHeight = 8.0f; //[m]
     private float WallWidth; //[m]
     private float StageWidth = 16.0f; //[m]
+    private float StageLength = 20.0f; //[m]
     private float Tilling = 5; //[]
     
     
@@ -29,7 +30,11 @@ public class WallClosing : MonoBehaviour
 
     void Update()
     {
-        //壁を前進させる
-        transform.Translate(0,0,ClosingSpeed * Time.deltaTime);
+        if (transform.position.z < stageGenerating.NumRow * StageLength + StageLength /2 - 1.0f)
+        {
+            //壁を前進させる
+            transform.Translate(0,0,ClosingSpeed * Time.deltaTime);
+        }
+        
     }
 }

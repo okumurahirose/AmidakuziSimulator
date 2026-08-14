@@ -10,6 +10,7 @@ using UnityEngine.UIElements;
 public class StageGenerating : MonoBehaviour
 {
     [SerializeField] private GameObject[] Stages;
+    [SerializeField] private GameObject[] Goals;
     private List<GameObject> GeneratedStages = new List<GameObject>();
     public int NumLine;
     public int NumRow;
@@ -22,6 +23,12 @@ public class StageGenerating : MonoBehaviour
     enum KindofStage
     {
         Straight,CornerRight,CornerLeft
+    }
+
+    //生成するゴールの種類を列挙体として宣言　(配列Goal[]は真ん中、右角、左角の順に設定する)
+    enum KindofGoal
+    {
+        Center,Right,Left
     }
 
     void Awake()
@@ -50,8 +57,12 @@ public class StageGenerating : MonoBehaviour
                 {
                     Corner = GenerateStage(Route,Line,Row,Corner);
                 }
-                
             }
+        }
+
+        for(int Line = 0;Line < NumLine; Line++)
+        {
+            GenerateGoal(Line);
         }
     }
 
@@ -93,7 +104,22 @@ public class StageGenerating : MonoBehaviour
         }
 
         return false;
+    }
 
+    void GenerateGoal(int line)
+    {   
+        //どのゴールを生成するか
+        int hantei = (int)KindofGoal.Center;
+        if(line == 0) hantei = (int)KindofGoal.Left;
+        else if(line == NumLine-1) hantei = (int)KindofGoal.Right;
+
+         GameObject target = Instantiate(
+                                    Goals[hantei],
+                                    new Vector3(-StageWidth * line,0,StageLength * NumRow),
+                                    Quaternion.identity
+                                    );
+        GeneratedStages.Add(target);
+        target.transform.parent = transform;
     }
 
     //あみだくじのルートを探る(最初のステージの列番号でルートを判別)
