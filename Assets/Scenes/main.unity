@@ -167,8 +167,12 @@ MonoBehaviour:
   - {fileID: 3748529630202316237, guid: 362e0e4e574ea1741b6a24c0ae0f8a2b, type: 3}
   - {fileID: 637731056254738181, guid: ecba1d4f143bb174db11810dd176f810, type: 3}
   - {fileID: 4547054302491995431, guid: 86edbb976e3e6f842a200e7a87d8c9e4, type: 3}
-  NumLine: 10
-  NumRow: 20
+  Goals:
+  - {fileID: 532381501320963076, guid: b19f8b2990bca2b4cb649c955f01e4fa, type: 3}
+  - {fileID: 532381501320963076, guid: fe496e7503927c74fb0e54429385d56d, type: 3}
+  - {fileID: 532381501320963076, guid: f2fad966c28499a4782a66217a0ada07, type: 3}
+  NumLine: 3
+  NumRow: 10
   CornerRate: 40
 --- !u!1 &398602587 stripped
 GameObject:

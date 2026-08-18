@@ -25,7 +25,7 @@ public class SuccessJudging : MonoBehaviour
             SuccessJudging player = other.gameObject.GetComponent<SuccessJudging>();
             if(SuccessNum == player.SuccessNum)
             {
-                Debug.Log("OK");
+                
             }
             else
             {   
