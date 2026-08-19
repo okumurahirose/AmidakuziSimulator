@@ -7,7 +7,6 @@ public class ScoreGiving : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {   
-        Debug.Log("OK");
         playerScore = other.gameObject.GetComponent<PlayerScore>();
         playerScore.RouteScore += PlusScore;
         gameObject.SetActive(false);

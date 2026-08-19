@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 4054602450554498814}
   m_Layer: 0
   m_Name: "\u30D7\u30EC\u30A4\u30E4\u30FC(\u4EEE)"
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13260a55b33e0b44dace856e8d28dbc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScore
+  RouteScore: 0
 --- !u!1 &6362891976881754623
 GameObject:
   m_ObjectHideFlags: 0
