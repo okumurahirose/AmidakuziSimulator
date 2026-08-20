@@ -171,8 +171,8 @@ MonoBehaviour:
   - {fileID: 532381501320963076, guid: b19f8b2990bca2b4cb649c955f01e4fa, type: 3}
   - {fileID: 532381501320963076, guid: fe496e7503927c74fb0e54429385d56d, type: 3}
   - {fileID: 532381501320963076, guid: f2fad966c28499a4782a66217a0ada07, type: 3}
-  NumLine: 3
-  NumRow: 10
+  NumLine: 1
+  NumRow: 4
   CornerRate: 40
 --- !u!1 &398602587 stripped
 GameObject:
