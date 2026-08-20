@@ -4,12 +4,12 @@ public class GoalDeciding : MonoBehaviour
 {
     private PlayerMove playerMove;
     private PlayerScore playerScore;
-    private Collider collider;
+    private Collider MyCollider;
 
     void Start()
     {
-        collider = GetComponent<Collider>();
-        collider.isTrigger = true;
+        MyCollider = GetComponent<Collider>();
+        MyCollider.isTrigger = true;
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,7 +29,7 @@ public class GoalDeciding : MonoBehaviour
         {
             playerScore = other.gameObject.GetComponent<PlayerScore>();
             playerScore.SendMessage("Goal");
-            collider.isTrigger = false;
+            MyCollider.isTrigger = false;
         }
     }
 }
