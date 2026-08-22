@@ -873,8 +873,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: "\u3042\u307F\u3060\u304F\u3058\u30B7\u30DF\u30E5\u30EC\u30FC\u30BF\u30FC"
-  metroPackageVersion: 
+  metroPackageName: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -882,7 +882,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: "\u3042\u307F\u3060\u304F\u3058\u30B7\u30DF\u30E5\u30EC\u30FC\u30BF\u30FC"
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: "\u3042\u307F\u3060\u304F\u3058\u30B7\u30DF\u30E5\u30EC\u30FC\u30BF\u30FC"
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

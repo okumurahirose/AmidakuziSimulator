@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,17 +9,22 @@ public class PlayerMove : MonoBehaviour
     CharacterController characterController;
     Animator PlayerAnimator;
 
+    //シーンが移動してからプレイヤーがスタートするまでの待ち時間、待ち時間が終わったか
+    [SerializeField] private float WTFS; // [s] (WaitingTimeForStartの略)
+    public bool CanStart = false;
+
     //上から順に、最大速度、角速度、加速度、重力
     [SerializeField] private float MaxMovingSpeed; //[m/s]
     public float RotationSpeed; //[deg/s] （CameraFollowingで参照する）
     [SerializeField] private float AccelerateSpeed; //[m/s^2]
-    private const float Glavity = -9.81f;
+    private const float Glavity = -9.81f; //[m/s^2]
 
     //上から順に、現在の速度、移動距離、現在位置
     private float MovingSpeed; //[m/s]
     private Vector3 MoveDirection; //[(m,m,m)]
     private Vector3 CurrentPositon; //[(m,m,m)]
 
+    //プレイヤーがスタン状態であるか
     public bool IsStan = false;
 
     void Start()
@@ -28,6 +35,8 @@ public class PlayerMove : MonoBehaviour
         MovingSpeed = 0.0f;
         MoveDirection = Vector3.zero;
         CurrentPositon = transform.position;
+
+        Invoke("AbleToStart",WTFS);
     }
 
     void Update()
@@ -36,7 +45,8 @@ public class PlayerMove : MonoBehaviour
         {
             
         }
-        else{
+        else if(CanStart)
+        {
             //現在位置の更新
             CurrentPositon = transform.position;
 
@@ -78,5 +88,10 @@ public class PlayerMove : MonoBehaviour
     {
         IsStan = true;
         PlayerAnimator.SetTrigger("Collision");
+    }
+
+    void AbleToStart()
+    {
+        CanStart = true;
     }
 }

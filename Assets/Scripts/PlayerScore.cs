@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
+    [SerializeField] private PlayerMove playerMove;
+
+    //ルートスコア、タイム、ゴールしたか
     public int RouteScore;
     public float Timer;
     private bool WasGoal = false;
@@ -13,7 +16,7 @@ public class PlayerScore : MonoBehaviour
 
     void Update()
     {
-        if (!WasGoal)
+        if (!WasGoal && playerMove.CanStart)
         {
             Timer += Time.deltaTime;
         }
