@@ -249,10 +249,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1793995439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353.33, y: 132.17}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -60, y: -60}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &827825752
 MonoBehaviour:
@@ -475,11 +475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -701,8 +701,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038147, y: -80}
-  m_SizeDelta: {x: 168.6213, y: 53.8109}
+  m_AnchoredPosition: {x: 0.0000076294, y: -113}
+  m_SizeDelta: {x: 319.2074, y: 98.8843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032646503
 MonoBehaviour:
@@ -750,7 +750,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1931895319}
         m_TargetAssemblyTypeName: SceneControling, Assembly-CSharp
-        m_MethodName: TitleToMain
+        m_MethodName: TitleToGenerateSerect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIControling : MonoBehaviour
+public class UIControling_Main : MonoBehaviour
 {   
     [SerializeField] private PlayerScore playerScore;
     [SerializeField] private TextMeshProUGUI Text_RouteScore;

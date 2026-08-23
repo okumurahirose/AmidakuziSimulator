@@ -2182,8 +2182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 26129d9cc955ae84c9beae947c907eb2, type: 2}
-  m_sharedMaterial: {fileID: 8403225994416401819, guid: 26129d9cc955ae84c9beae947c907eb2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e9c77b80ef9fc044875fe33a3390fbe, type: 2}
+  m_sharedMaterial: {fileID: 8344747153892070432, guid: 7e9c77b80ef9fc044875fe33a3390fbe, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
