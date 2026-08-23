@@ -38,8 +38,7 @@ public class GoalDeciding : MonoBehaviour
 
     IEnumerator GoalMessageToMove()
     {
-        yield return new WaitForSeconds(2.0f);
-        Debug.Log("OK");
+        yield return new WaitForSeconds(1.0f);
         playerMove.SendMessage("Goal_Move");
     }
 }

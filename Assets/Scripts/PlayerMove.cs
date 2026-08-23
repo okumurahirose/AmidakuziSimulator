@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -73,25 +74,29 @@ public class PlayerMove : MonoBehaviour
 
                 if (WasGoal) //ゴールした後は自由に動ける
                 {   
-                    int abs = 0;
-
                     if(Keyboard.current.sKey.isPressed)
                     {
-                        abs = -1;
+                        MovingSpeed -= AccelerateSpeed * Time.deltaTime;
+                        PlayerAnimator.SetBool("run",true);
                     }
                     else if(Keyboard.current.wKey.isPressed)
                     {
-                        abs = 1;
+                        MovingSpeed += AccelerateSpeed * Time.deltaTime;
+                        PlayerAnimator.SetBool("run",true);
                     }
-                    
-                    MovingSpeed += abs * AccelerateSpeed * Time.deltaTime;
-                    MovingSpeed = Mathf.Clamp(MovingSpeed,-MaxMovingSpeed,MaxMovingSpeed);
+                    else
+                    {
+                        MovingSpeed = 0;
+                        PlayerAnimator.SetBool("run",false);
+                    }
                 }
-                else
+                else //ゴールする前は勝手に前に進む
                 {
                     MovingSpeed += AccelerateSpeed * Time.deltaTime;
-                    MovingSpeed = Mathf.Clamp(MovingSpeed,0,MaxMovingSpeed);
+                    PlayerAnimator.SetBool("run",true);
                 }
+
+                MovingSpeed = Mathf.Clamp(MovingSpeed,-MaxMovingSpeed,MaxMovingSpeed);
 
                 
                 MoveDirection.z = MovingSpeed * Time.deltaTime * Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
