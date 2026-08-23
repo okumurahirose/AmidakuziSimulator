@@ -24,8 +24,9 @@ public class PlayerMove : MonoBehaviour
     private Vector3 MoveDirection; //[(m,m,m)]
     private Vector3 CurrentPositon; //[(m,m,m)]
 
-    //プレイヤーがスタン状態であるか
+    //プレイヤーがスタン状態であるか、ゴールしたか
     public bool IsStan = false;
+    private bool WasGoal = false;
 
     void Start()
     {
@@ -67,8 +68,32 @@ public class PlayerMove : MonoBehaviour
                 }
 
                 //移動
-                MovingSpeed += AccelerateSpeed * Time.deltaTime;
-                MovingSpeed = Mathf.Clamp(MovingSpeed,0,MaxMovingSpeed);
+                //ゴールする前は勝手に前に行く
+                
+
+                if (WasGoal) //ゴールした後は自由に動ける
+                {   
+                    int abs = 0;
+
+                    if(Keyboard.current.sKey.isPressed)
+                    {
+                        abs = -1;
+                    }
+                    else if(Keyboard.current.wKey.isPressed)
+                    {
+                        abs = 1;
+                    }
+                    
+                    MovingSpeed += abs * AccelerateSpeed * Time.deltaTime;
+                    MovingSpeed = Mathf.Clamp(MovingSpeed,-MaxMovingSpeed,MaxMovingSpeed);
+                }
+                else
+                {
+                    MovingSpeed += AccelerateSpeed * Time.deltaTime;
+                    MovingSpeed = Mathf.Clamp(MovingSpeed,0,MaxMovingSpeed);
+                }
+
+                
                 MoveDirection.z = MovingSpeed * Time.deltaTime * Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
                 MoveDirection.x = MovingSpeed * Time.deltaTime * Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
 
@@ -88,6 +113,11 @@ public class PlayerMove : MonoBehaviour
     {
         IsStan = true;
         PlayerAnimator.SetTrigger("Collision");
+    }
+
+    void Goal_Move()
+    {   
+        WasGoal = true;
     }
 
     void AbleToStart()

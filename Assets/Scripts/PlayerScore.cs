@@ -22,7 +22,7 @@ public class PlayerScore : MonoBehaviour
         }
     }
 
-    void Goal()
+    void Goal_Score()
     {
         WasGoal = true;
     }

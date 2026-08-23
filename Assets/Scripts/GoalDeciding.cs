@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GoalDeciding : MonoBehaviour
@@ -28,8 +29,17 @@ public class GoalDeciding : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             playerScore = other.gameObject.GetComponent<PlayerScore>();
-            playerScore.SendMessage("Goal");
+            playerMove = other.gameObject.GetComponent<PlayerMove>();
+            playerScore.SendMessage("Goal_Score");
+            StartCoroutine("GoalMessageToMove");
             MyCollider.isTrigger = false;
         }
+    }
+
+    IEnumerator GoalMessageToMove()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Debug.Log("OK");
+        playerMove.SendMessage("Goal_Move");
     }
 }
