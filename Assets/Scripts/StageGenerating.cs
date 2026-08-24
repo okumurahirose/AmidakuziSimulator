@@ -1,20 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class StageGenerating : MonoBehaviour
 {
+    //生成するステージプレハブ、ゴールプレハブ、生成したステージを保存するリスト
     [SerializeField] private GameObject[] Stages;
     [SerializeField] private GameObject[] Goals;
     private List<GameObject> GeneratedStages = new List<GameObject>();
-    public int NumLine;
-    public int NumRow;
-    [SerializeField] private float CornerRate;
+
+    //あみだくじのライン数、ステージ行数、曲がり角の生成確率
+    private int NumLine;
+    private int NumRow;
+    private float CornerRate;
+
+    //ステージ幅、ステージ長、あみだくじの形を保存する二重配列
     private float StageWidth = 16.0f;
     private float StageLength = 20.0f;
     private int[,] Route;
@@ -31,15 +31,18 @@ public class StageGenerating : MonoBehaviour
         Center,Right,Left
     }
 
-    void Awake()
-    {   
-        //あみだくじのルートを記録する配列
-        Route = new int[NumRow,NumLine];
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {   
+        //あみだくじの生成条件やステージの幅、長さの情報を取得
+        NumLine = AmidakuziGenerateSetting.Instance.NumLine;
+        NumRow = AmidakuziGenerateSetting.Instance.NumRow;
+        CornerRate = AmidakuziGenerateSetting.Instance.CornerRate;
+        StageWidth = AmidakuziGenerateSetting.Instance.StageWidth;
+        StageLength = AmidakuziGenerateSetting.Instance.StageLength;
+
+        //あみだくじのルートを記録する配列を動的確保
+        Route = new int[NumRow,NumLine];
+
         for(int Row = 0;Row < NumRow; Row++)
         {   
             //隣のステージが曲がり角であるか
