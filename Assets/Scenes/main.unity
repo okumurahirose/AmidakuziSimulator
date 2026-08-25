@@ -1247,7 +1247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409185462773527596, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
       propertyPath: FirstPosition_Z
-      value: -60
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 7409185462773527596, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
       propertyPath: stageGenerating

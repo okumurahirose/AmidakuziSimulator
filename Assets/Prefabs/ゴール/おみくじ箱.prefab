@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1772439590203299339}
   - component: {fileID: 1381995796266080581}
   m_Layer: 5
-  m_Name: Image
+  m_Name: "\u80CC\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1425,6 +1425,7 @@ GameObject:
   - component: {fileID: 4656657619986908595}
   - component: {fileID: 6590661940254264127}
   - component: {fileID: 1801684032896963227}
+  - component: {fileID: 4857931836829768082}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1516,6 +1517,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4857931836829768082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341034172433649609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bd52c445e5d0b4fb305c8497704e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIControlering_GoalPresentText
+  PresentText: {fileID: 3751607663627802073}
 --- !u!1 &5497612568095295554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,7 +2141,7 @@ GameObject:
   - component: {fileID: 1694600153187404590}
   - component: {fileID: 3751607663627802073}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: "\u4E00\u8A00"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2214,8 +2228,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1

@@ -17,8 +17,6 @@ public class GoalDeciding : MonoBehaviour
     {
         if(other.transform.position.z > transform.position.z)
         {
-            Debug.Log(other.transform.position.z);
-            Debug.Log(transform.position.z);
             playerMove = other.gameObject.GetComponent<PlayerMove>();
             playerMove.SendMessage("ToStan");
         }

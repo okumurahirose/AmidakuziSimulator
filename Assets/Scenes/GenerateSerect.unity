@@ -278,8 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c65521c76b3f0b45b8acf2b8658bddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmidakuziGenerateSetting
-  NumLine: 0
-  NumRow: 0
+  NumLine: 2
+  NumRow: 1
   CornerRate: 0
   StageWidth: 16
   StageLength: 20
@@ -1083,12 +1083,28 @@ PrefabInstance:
       value: "\u9577\u3055"
       objectReference: {fileID: 0}
     - target: {fileID: 3706433868862842253, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706433868862842253, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706433868862842253, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_MaxValue
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_MinValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -1121,6 +1137,10 @@ PrefabInstance:
     - target: {fileID: 8045908283840333725, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_text
       value: "\u9577\u3055"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210052678647988028, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8210052678647988028, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1857,11 +1877,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_Value
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_MaxValue
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_MinValue
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
