@@ -7,7 +7,7 @@ public class WallClosing : MonoBehaviour
 
     //追いかける速さ、初期のｚ位置
     [SerializeField] private float ClosingSpeed; //[m/s]
-    [SerializeField] private float FirstPosition_Z = -40; //[m]
+    [SerializeField] private float FirstPosition_Z; //[m]
 
     //あみだくじのライン数、ステージ行数
     private int NumLine;

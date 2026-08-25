@@ -125,5 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603b9a9109e0e4244b79b8a876f195c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WallClosing
-  stageGenerating: {fileID: 0}
   material: {fileID: 0}
+  ClosingSpeed: 0
+  FirstPosition_Z: -80

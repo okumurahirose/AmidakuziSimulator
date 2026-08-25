@@ -246,9 +246,6 @@ MonoBehaviour:
   - {fileID: 532381501320963076, guid: b19f8b2990bca2b4cb649c955f01e4fa, type: 3}
   - {fileID: 532381501320963076, guid: fe496e7503927c74fb0e54429385d56d, type: 3}
   - {fileID: 532381501320963076, guid: f2fad966c28499a4782a66217a0ada07, type: 3}
-  NumLine: 3
-  NumRow: 4
-  CornerRate: 40
 --- !u!1 &279435002
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,13 +719,119 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &718649501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718649504}
+  - component: {fileID: 718649503}
+  - component: {fileID: 718649502}
+  - component: {fileID: 718649505}
+  m_Layer: 0
+  m_Name: SerectTimeCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &718649502
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718649501}
+  m_Enabled: 0
+--- !u!20 &718649503
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718649501}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 1
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 1
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &718649504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718649501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &718649505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718649501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466b521b1c0a21540bc84772edc53c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SerectTimeCameraControling
+  ScrollSpeed: 50
 --- !u!1 &735501364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3148090519285334593, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
@@ -826,6 +929,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755184353}
   m_CullTransparentMesh: 1
+--- !u!1 &939244354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939244356}
+  - component: {fileID: 939244355}
+  m_Layer: 0
+  m_Name: "AmidakuziGenerateSettin(\u30C7\u30D0\u30C3\u30AF\u7528)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939244355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939244354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c65521c76b3f0b45b8acf2b8658bddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmidakuziGenerateSetting
+  NumLine: 16
+  NumRow: 20
+  CornerRate: 50
+  StageWidth: 16
+  StageLength: 20
+--- !u!4 &939244356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939244354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377311109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,7 +1202,7 @@ GameObject:
   - component: {fileID: 1911010729}
   - component: {fileID: 1911010728}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PlayTimeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1427,7 +1579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2801097914168023306, guid: 3acfc98b30c6ee24b9251b318b82d45c, type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: PlayTImeCamera
       objectReference: {fileID: 0}
     - target: {fileID: 7256275383278889305, guid: 3acfc98b30c6ee24b9251b318b82d45c, type: 3}
       propertyPath: Player
@@ -1490,3 +1642,5 @@ SceneRoots:
   - {fileID: 1911010731}
   - {fileID: 2028164879}
   - {fileID: 1377311111}
+  - {fileID: 718649504}
+  - {fileID: 939244356}
