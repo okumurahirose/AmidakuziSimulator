@@ -22,18 +22,16 @@ public class SerectTimeCameraControling : MonoBehaviour
 
     //スクロールが終わったか
     private bool FinishScroll = false;
-    
-    
     void Start()
     {   
-        //カメラコンポーネントの取得
-        MyCamera = gameObject.GetComponent<Camera>();
-
         //あみだくじの生成条件を取得
         NumLine = AmidakuziGenerateSetting.Instance.NumLine;
         NumRow = AmidakuziGenerateSetting.Instance.NumRow;
         StageWidth = AmidakuziGenerateSetting.Instance.StageWidth;
         StageLength = AmidakuziGenerateSetting.Instance.StageLength;
+
+        //カメラコンポーネントの取得
+        MyCamera = gameObject.GetComponent<Camera>();
 
         //セットポジションの初期化
         SetPosition = new Vector3(-(NumLine-1) * StageWidth / 2,100,0) ;
@@ -56,6 +54,8 @@ public class SerectTimeCameraControling : MonoBehaviour
         
         //配置
         transform.position = SetPosition;
+
+        
     }
 
     

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StageGenerating : MonoBehaviour
 {
+    [SerializeField] private SerectLineControling serectLineControling;
+
     //生成するステージプレハブ、ゴールプレハブ、生成したステージを保存するリスト
     [SerializeField] private GameObject[] Stages;
     [SerializeField] private GameObject[] Goals;
@@ -94,6 +96,21 @@ public class StageGenerating : MonoBehaviour
                                     );
         GeneratedStages.Add(target);
         target.transform.parent = transform;
+
+        //最初のスタートステージだったらserectLineControlingに登録
+        if(row == 0)
+        {   
+            //targetの子オブジェクトを順番に探して色付け部分を探す
+            foreach(Transform child in target.transform.GetComponentsInChildren<Transform>())
+            {
+                if (child.CompareTag("ColourTile"))
+                {
+                    serectLineControling.CTOSS[line] = child.gameObject;
+                    break;
+                }
+            }
+
+        }
 
         //あみだくじのルートを確定させる
         Route[row,line] = Routing(Route,line,row,hantei);

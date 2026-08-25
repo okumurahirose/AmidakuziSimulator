@@ -119,6 +119,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &248986788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248986789}
+  - component: {fileID: 248986790}
+  m_Layer: 0
+  m_Name: StartLineSerectControler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &248986789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248986788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &248986790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248986788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dac2f2e3eff12740878b706d8bcd1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SerectLineControling
+  CTOSS: []
+  DefaultLineColour: {fileID: 2100000, guid: 8294b53a74e9cd24bbf3c811016f292d, type: 2}
+  SerectedLineColour: {fileID: 2100000, guid: 55a2ad8d069f1f240bdf20db1a3d33dc, type: 2}
+  Player: {fileID: 398602587}
+  ClosingWall: {fileID: 735501364}
+  SerectTimeCamera: {fileID: 718649501}
+  PlayTimeCamera: {fileID: 1223457817}
+  SerectTimeCanvas: {fileID: 0}
+  PlayTimeCanvas: {fileID: 1911010727}
+  UIControler_PlayTime: {fileID: 1377311109}
+  PlayerSuccessJudging: {fileID: 398602592}
 --- !u!1 &263747606
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f188e12a5c772468e402a08828e74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageGenerating
+  serectLineControling: {fileID: 248986790}
   Stages:
   - {fileID: 3748529630202316237, guid: 362e0e4e574ea1741b6a24c0ae0f8a2b, type: 3}
   - {fileID: 637731056254738181, guid: ecba1d4f143bb174db11810dd176f810, type: 3}
@@ -492,6 +548,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13260a55b33e0b44dace856e8d28dbc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScore
+--- !u!114 &398602592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2977756277568298548, guid: f1708955a50c3cb4e9a9e6b3bc517480, type: 3}
+  m_PrefabInstance: {fileID: 7001739226354571309}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398602587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bea517a16c92942870c0fa8de738f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuccessJudging
 --- !u!1 &470586996
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +819,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718649501}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &718649503
 Camera:
   m_ObjectHideFlags: 0
@@ -795,7 +862,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -978,6 +1045,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1223457817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2801097914168023306, guid: 3acfc98b30c6ee24b9251b318b82d45c, type: 3}
+  m_PrefabInstance: {fileID: 8740240159404242496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1377311109
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,12 +1061,12 @@ GameObject:
   - component: {fileID: 1377311111}
   - component: {fileID: 1377311110}
   m_Layer: 0
-  m_Name: UIControler
+  m_Name: UIControler_PlayTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1377311110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,7 +1191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148090519285334593, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3148090519285334593, guid: 332e93da2a470d74293637e129dcdf1d, type: 3}
       propertyPath: m_TagString
@@ -1207,7 +1279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1911010728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,6 +1592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u30D7\u30EC\u30A4\u30E4\u30FC(\u4EEE)"
       objectReference: {fileID: 0}
+    - target: {fileID: 6031643899029616262, guid: f1708955a50c3cb4e9a9e6b3bc517480, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8482896488428890819, guid: f1708955a50c3cb4e9a9e6b3bc517480, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1581,6 +1657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayTImeCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 2801097914168023306, guid: 3acfc98b30c6ee24b9251b318b82d45c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7256275383278889305, guid: 3acfc98b30c6ee24b9251b318b82d45c, type: 3}
       propertyPath: Player
       value: 
@@ -1636,11 +1716,12 @@ SceneRoots:
   m_Roots:
   - {fileID: 705507995}
   - {fileID: 7001739226354571309}
-  - {fileID: 8740240159404242496}
-  - {fileID: 267022419}
   - {fileID: 1900267359}
+  - {fileID: 8740240159404242496}
   - {fileID: 1911010731}
-  - {fileID: 2028164879}
   - {fileID: 1377311111}
   - {fileID: 718649504}
+  - {fileID: 248986789}
+  - {fileID: 267022419}
   - {fileID: 939244356}
+  - {fileID: 2028164879}

@@ -39,4 +39,9 @@ public class SuccessJudging : MonoBehaviour
             }
         }
     }
+
+    public void DecideSuccessNum(int Num)
+    {
+        SuccessNum = Num;
+    }
 }
