@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class GoalPresentTextData : MonoBehaviour
+public class GoalPresentWordData : MonoBehaviour
 {
-    public static GoalPresentTextData Instance;
+    public static GoalPresentWordData Instance;
 
     //おみくじ箱の上に表示する一言を保存する配列
     public string[] PresentWords = new string[20];
+
+    //登録できる最大一言数
+    public int MaxWordCount = 20;
 
     //登録された一言の数
     public int WordCount;

@@ -119,6 +119,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &83500539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83500541}
+  - component: {fileID: 83500540}
+  m_Layer: 0
+  m_Name: "GoalPresentTextData(\u30C7\u30D0\u30C3\u30AF\u7528)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &83500540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83500539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df29c583b74df1c47ab26b82660760d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoalPresentTextData
+  PresentWords:
+  - "\u4EBA\u751F\u697D\u3057\u3044\uFF1F"
+  - "\u3042\u307F\u3060\u304F\u3058\u306A\u3089\u541B\u3067\u3082\u5931\u6557\u3057\u306A\u3044\u306D"
+  - "\u304A\u3064\u304B\u308C"
+  - "\u4EBA\u751F\u306F\u66F2\u304C\u308A\u89D2\u306E\u4F4D\u7F6E\u304C\u308F\u304B\u3089\u306A\u3044\u3093\u3060\u3088\uFF1F"
+  - "\u4F55\u56DE\u66F2\u304C\u3063\u305F\u304B\u306A\uFF1F"
+  - "\u3046\u304Aw"
+  - "\u93E1\u3092\u898B\u3066\u3053\u3044\u3088\u3002\u30D1\u30BD\u30B3\u30F3\u3058\u3083\u306A\u304F\u3066"
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  WordCount: 7
+--- !u!4 &83500541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83500539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248986788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,5 +1789,6 @@ SceneRoots:
   - {fileID: 718649504}
   - {fileID: 248986789}
   - {fileID: 267022419}
-  - {fileID: 939244356}
   - {fileID: 2028164879}
+  - {fileID: 939244356}
+  - {fileID: 83500541}

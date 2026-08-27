@@ -10,8 +10,8 @@ public class UIControlering_GoalPresentText : MonoBehaviour
 
    void Start()
    {
-      Words = GoalPresentTextData.Instance.PresentWords;
-      WordCount = GoalPresentTextData.Instance.WordCount;
+      Words = GoalPresentWordData.Instance.PresentWords;
+      WordCount = GoalPresentWordData.Instance.WordCount;
       ThisTimeWord = Words[Random.Range(0,WordCount)];
       Debug.Log(ThisTimeWord);
 

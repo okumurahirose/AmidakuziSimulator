@@ -863,7 +863,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1848809259}
         m_TargetAssemblyTypeName: SceneControling, Assembly-CSharp
-        m_MethodName: GenerateSerectToMain
+        m_MethodName: ToMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

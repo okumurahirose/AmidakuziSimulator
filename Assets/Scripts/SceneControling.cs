@@ -2,17 +2,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneControling : MonoBehaviour
-{
-    public void TitleToGenerateSerect()
+{   
+    //タイトルシーンに行きます
+    public void ToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    
+    //あみだくじの生成条件設定シーンに行きます
+    public void ToGenerateSerect()
     {
         SceneManager.LoadScene("GenerateSerect");
     }
 
-    public void GenerateSerectToMain()
+    //ゲームの汎用設定シーンに行きます
+    public void ToSettingMenu()
+    {
+        SceneManager.LoadScene("SettingMenu");
+    }
+
+    //ゲームのメインとなるプレイシーンに行きます
+    public void ToMain()
     {
         SceneManager.LoadScene("Main");
     }
 
+    //ゲームを終了します
     public void GameQuit()
     {
         Debug.Log("ゲームを終了");

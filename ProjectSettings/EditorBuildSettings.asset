@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: e62a47cf4b15f06499fb4ab0cf8e9943
   - enabled: 1
+    path: Assets/Scenes/SettingMenu.unity
+    guid: 3c33f9dd7c3d401458d8f830f2ff1e62
+  - enabled: 1
     path: Assets/Scenes/GenerateSerect.unity
     guid: 7ce9c744ffda62144889143cb023bc3a
   - enabled: 1
