@@ -1,5 +1,8 @@
 using UnityEngine;
 
+//「Main」シーン中において、ゴールエリアに置かれたキャンバスに表示されるゴール後の一言コメントについて、その文章本体と文章数などを保存します。
+//シングルトンとして運用し、シーンを跨いで情報を保持します。
+
 public class GoalPresentWordData : MonoBehaviour
 {
     public static GoalPresentWordData Instance;

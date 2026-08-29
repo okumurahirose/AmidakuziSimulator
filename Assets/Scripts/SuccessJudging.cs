@@ -1,5 +1,8 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
+
+//「Main」シーンにおいて、プレイヤーが正しい道を通っているかを判断します。
+//プレイヤー側とルート側がそれぞれ持っている識別番号によって可否を下します。
+//トリガー設定したコライダーを持つ各オブジェクトに付与され、個別管理となります。
 
 public class SuccessJudging : MonoBehaviour
 {
@@ -23,6 +26,7 @@ public class SuccessJudging : MonoBehaviour
         {   
             //プレイヤーが持つ番号と識別番号が合っていたら成功
             SuccessJudging player = other.gameObject.GetComponent<SuccessJudging>();
+            
             if(SuccessNum == player.SuccessNum)
             {
                 

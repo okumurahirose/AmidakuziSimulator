@@ -8,6 +8,7 @@ TagManager:
   - ColourTile
   - InputField
   - InputFieldNumber
+  - GoalDecider
   layers:
   - Default
   - TransparentFX

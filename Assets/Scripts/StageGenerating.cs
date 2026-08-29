@@ -1,10 +1,14 @@
 using System.Collections.Generic;
-using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
+
+//「Main」シーンにおいて、あみだくじを生成条件を基に作成し、各ルート情報を配列に保存します。
 
 public class StageGenerating : MonoBehaviour
 {
     [SerializeField] private SerectLineControling serectLineControling;
+
+    [SerializeField] private AllPlayersData allPlayersData;
 
     //生成するステージプレハブ、ゴールプレハブ、生成したステージを保存するリスト
     [SerializeField] private GameObject[] Stages;
@@ -140,6 +144,16 @@ public class StageGenerating : MonoBehaviour
                                     );
         GeneratedStages.Add(target);
         target.transform.parent = transform;
+        
+        //ゴール判定オブジェジェクトの「GoalDeciding」コンポーネントにあるAllPlayersDataを設定
+        foreach(Transform GoalDecider in target.GetComponentInChildren<Transform>())
+        {   
+            if(GoalDecider.gameObject.tag == "GoalDecider")
+            {
+                GoalDecider.gameObject.GetComponent<GoalDeciding>().allPlayersData = allPlayersData;
+                break;
+            }
+        }
     }
 
     //あみだくじのルートを探る(最初のステージの列番号でルートを判別)

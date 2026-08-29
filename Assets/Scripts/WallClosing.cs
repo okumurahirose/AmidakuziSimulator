@@ -1,5 +1,6 @@
-using System;
 using UnityEngine;
+
+//「Main」シーンにおいて、迫りくる壁の動きを制御します。
 
 public class WallClosing : MonoBehaviour
 {   

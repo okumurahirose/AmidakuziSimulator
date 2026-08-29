@@ -1,7 +1,8 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
+//UIにおいて、シリンダーが返す値をプレイヤーが見えるようテキストに起こします。
 
 public class Slider_TextAdjusting : MonoBehaviour
 {

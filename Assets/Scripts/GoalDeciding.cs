@@ -1,8 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
+//「Main」シーンにおいて、プレイヤーがゴールエリアに達したことを検知し、プレイヤーの動きやスコアを管理するオブジェクトに信号を送信します。
+//また、プレイヤーがゴール後に逆走を計れないよう、ゴールエリアとステージの境目に置かれた自身の当たり判定を操作します。
+
 public class GoalDeciding : MonoBehaviour
 {
+    public AllPlayersData allPlayersData;
     private PlayerMove playerMove;
     private PlayerScore playerScore;
     private Collider MyCollider;
@@ -30,6 +34,7 @@ public class GoalDeciding : MonoBehaviour
             playerMove = other.gameObject.GetComponent<PlayerMove>();
             playerScore.SendMessage("Goal_Score");
             StartCoroutine("GoalMessageToMove");
+            allPlayersData.RegisterGoalPlayer(other.gameObject);
             MyCollider.isTrigger = false;
         }
     }

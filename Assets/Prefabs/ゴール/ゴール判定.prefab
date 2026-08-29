@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2249935520105648091}
   - component: {fileID: 4819317692255480106}
-  - component: {fileID: 100466128562837782}
   - component: {fileID: 2382492543869249493}
   - component: {fileID: 3392780017724697078}
+  - component: {fileID: 100466128562837782}
   m_Layer: 0
   m_Name: "\u30B4\u30FC\u30EB\u5224\u5B9A"
-  m_TagString: Untagged
+  m_TagString: GoalDecider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,18 +56,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &100466128562837782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6378253376199921794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a014e2d6f49326b4f9b2fe51a73641e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GoalDeciding
 --- !u!33 &2382492543869249493
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -125,3 +113,16 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &100466128562837782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378253376199921794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a014e2d6f49326b4f9b2fe51a73641e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoalDeciding
+  AllPlayersData: {fileID: 0}

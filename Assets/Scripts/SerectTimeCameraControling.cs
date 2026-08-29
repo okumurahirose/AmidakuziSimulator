@@ -1,7 +1,7 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+//「Main」シーン中において、あみだくじの全容をみせるカメラの動きを制御します。
+//「Main」シーン遷移後に最初に画面を映すカメラとなります。
 
 public class SerectTimeCameraControling : MonoBehaviour
 {   

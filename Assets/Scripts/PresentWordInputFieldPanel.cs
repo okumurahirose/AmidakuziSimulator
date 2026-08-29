@@ -1,6 +1,9 @@
 using TMPro;
 using UnityEngine;
 
+//「SettimgMenu」シーン中において、「Main」シーンのゴールエリアに置かれたキャンバスに表示されるゴール後の一言コメントについて、その文章の入力パネルの情報を管理、フラグ送信を制御します。
+//各入力パネルオブジェクトに付与され、個別管理となります。
+
 public class PresentWordInputFieldPanel : MonoBehaviour
 {
     public UIConroling_SettingMenu_PresentWord UIConroling;

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//各シーンへの遷移を実行します。
+
 public class SceneControling : MonoBehaviour
 {   
     //タイトルシーンに行きます

@@ -1,5 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
+
+//「Main」シーン中で生成されるあみだくじの本体の生成条件や、構成要素である1ステージの幅、長さなどの情報を保存します。
+//シングルトンとして運用し、シーンを跨いで情報を保持します。
 
 public class AmidakuziGenerateSetting : MonoBehaviour
 {
@@ -25,5 +27,20 @@ public class AmidakuziGenerateSetting : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PassingSetting_NumLine(float value)
+    {
+        NumLine = (int)value;
+    }
+
+    public void PassingSetting_NumRow(float value)
+    {
+        NumRow = (int)value;
+    }
+
+    public void PassingSetting_CornerRate(float value)
+    {
+        CornerRate = value;
     }
 }

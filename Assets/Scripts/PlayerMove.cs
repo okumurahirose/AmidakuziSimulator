@@ -1,9 +1,9 @@
-using System;
-using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+//「Main」シーンにおいて、プレイヤーオブジェクトの動きを制御します。
+//各プレイヤーオブジェクトに付与され、個別管理となります。
+//ゴール前は強制的に前進し、ゴール後は自由に動けるようになります。
 
 public class PlayerMove : MonoBehaviour
 {

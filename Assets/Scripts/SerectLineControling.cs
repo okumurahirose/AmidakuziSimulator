@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//「Main」シーン中において、プレイを始める前にあみだくじのどのラインからスタートするかの決定について制御します。
+
 public class SerectLineControling : MonoBehaviour
 {   
     //ステージの色付け部分を格納する配列　ColourTilesOfStartStages(スタートステージの色付けタイル)の略
@@ -47,6 +49,7 @@ public class SerectLineControling : MonoBehaviour
         //配列の動的確保
         CTOSS = new GameObject[NumLine];
 
+        //一番左のラインが初めに選ばれていることにする
         StartCoroutine("FirstSerectedLine");
     }
 

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+//「Main」シーンにおいて、プレイヤーが保持するスコアに関する情報を計算、保存します。
+//各プレイヤーオブジェクトに付与され、個別管理となります。
+
 public class PlayerScore : MonoBehaviour
 {
     [SerializeField] private PlayerMove playerMove;

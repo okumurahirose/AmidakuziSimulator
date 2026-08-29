@@ -1,6 +1,6 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
+//「Main」シーン中において、プレイヤーを追いかけるカメラについて、その動きを指定します。
 
 public class CameraFollowing : MonoBehaviour
 {   

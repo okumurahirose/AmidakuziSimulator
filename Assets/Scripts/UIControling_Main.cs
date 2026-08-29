@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//「Main」シーンにおいて、画面に表示されるUIを管理します。
+
 public class UIControling_Main : MonoBehaviour
 {   
     [SerializeField] private PlayerScore playerScore;

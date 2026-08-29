@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
+//「SettimgMenu」シーンにおいて、「Main」シーンのゴールエリアに置かれたキャンバスに表示されるゴール後の一言コメントについて、プレイヤーが自由に文章を設定できるよう、InputFieldに書き込まれた文章をデータに保存します。
+//また、入力パネルの入力状態に応じて、新規入力パネルを生成、削除します。
 
 public class UIConroling_SettingMenu_PresentWord : MonoBehaviour
 {   
@@ -10,8 +12,6 @@ public class UIConroling_SettingMenu_PresentWord : MonoBehaviour
 
     //入力パネルプレハブ、その幅、その高さ
     [SerializeField] private GameObject WordInputPalnelPrefab;
-    private float PrefabWidth = 570.0f;
-    private float PrefabHeight = 110.0f;
 
     //シーン上に最初からある入力パネル
     [SerializeField] private PresentWordInputFieldPanel[] FirstWordInputPanels;
@@ -41,11 +41,10 @@ public class UIConroling_SettingMenu_PresentWord : MonoBehaviour
         //コンポーネントの取得
         ContentTransform = ScrollContent.GetComponent<RectTransform>();
 
-        //初めからあるパネルとその内容をパネル配列とデータに追加
+        //初めからあるパネルをパネル配列に追加
         for(int i = 0;i < PanelCount;i++)
         {
             WordInputPanels[i] = FirstWordInputPanels[i];
-            GoalPresentWordData.Instance.PresentWords[i] = WordInputPanels[i].Word.text;
         }
         
 
@@ -95,10 +94,6 @@ public class UIConroling_SettingMenu_PresentWord : MonoBehaviour
             //パネルが最大個数存在し、最大個数目が確定したときパネルは増えないため、登録文章数だけ増やす
             GoalPresentWordData.Instance.WordCount++;
         }
-
-        Debug.Log("add");
-        Debug.Log("PanelCount : " + PanelCount);
-        Debug.Log("WordCount : " + GoalPresentWordData.Instance.WordCount);
     }
 
     public void DeletePanel(GameObject Panel,int Num)
@@ -138,10 +133,5 @@ public class UIConroling_SettingMenu_PresentWord : MonoBehaviour
             //パネルが一個しかないときにそれが空なら、パネルは減らないため登録文章数だけを減らす
             GoalPresentWordData.Instance.WordCount--;
         }
-        
-
-        Debug.Log("delete");
-        Debug.Log("PanelCount : " + PanelCount);
-        Debug.Log("WordCount : " + GoalPresentWordData.Instance.WordCount);
     }
 }
