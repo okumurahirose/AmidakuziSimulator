@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreGiving
   PlusScore: 1
+  SE: {fileID: 8300000, guid: 688867e5afe315f4dbeb29e3ba040e7a, type: 3}

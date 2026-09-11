@@ -30,6 +30,10 @@ public class SerectLineControling : MonoBehaviour
     //プレイヤーのSuccessJudging
     [SerializeField] private SuccessJudging PlayerSuccessJudging;
 
+    //BGMを流しているオブジェジェクト、BGM
+    [SerializeField] private AudioSource AudioSource_BGM;
+    [SerializeField] private AudioClip AudioClip_PlayTime;
+
 
     //あみだくじのライン数、プレイヤーが選んでるラインのナンバー
     private int NumLine;
@@ -87,6 +91,11 @@ public class SerectLineControling : MonoBehaviour
             UIControler_PlayTime.SetActive(true);
             ClosingWall.SetActive(true);
             Player.SetActive(true);
+
+            //BGMの切り替え
+            AudioSource_BGM.clip = AudioClip_PlayTime;
+            AudioSource_BGM.loop = true;
+            AudioSource_BGM.Play();
 
             //このオブジェクトの潜在化
             gameObject.SetActive(false);

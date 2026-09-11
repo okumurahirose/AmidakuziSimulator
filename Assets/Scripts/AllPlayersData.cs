@@ -29,6 +29,19 @@ public class AllPlayersData : MonoBehaviour
     //ゴールしたプレイヤーオブジェクトを保存する配列
     private GameObject[] WasGoalPlayers;
 
+    void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         //オフラインのシーンであるならば、プレイヤーオブジェジェクトを指定して保存
