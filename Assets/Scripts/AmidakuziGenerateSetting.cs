@@ -16,6 +16,9 @@ public class AmidakuziGenerateSetting : MonoBehaviour
     public float StageWidth = 16.0f;
     public float StageLength = 20.0f;
 
+    //オンラインかどうか
+    public bool IsOnline = false;
+
     void Awake()
     {
         if(Instance == null)

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class GoalDeciding : MonoBehaviour
 {
-    public AllPlayersData allPlayersData;
+    public UIControling_Main uIControling_Main;
     private PlayerMove playerMove;
     private PlayerScore playerScore;
     private Collider MyCollider;
@@ -33,8 +33,9 @@ public class GoalDeciding : MonoBehaviour
             playerScore = other.gameObject.GetComponent<PlayerScore>();
             playerMove = other.gameObject.GetComponent<PlayerMove>();
             playerScore.SendMessage("Goal_Score");
+            uIControling_Main.SendMessage("Goal_UI");
             StartCoroutine("GoalMessageToMove");
-            allPlayersData.RegisterGoalPlayer(other.gameObject);
+            AllPlayersData.Instance.RegisterGoalPlayer(other.gameObject);
             MyCollider.isTrigger = false;
         }
     }

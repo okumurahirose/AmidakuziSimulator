@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,7 +7,8 @@ using UnityEngine.InputSystem;
 //ゴール前は強制的に前進し、ゴール後は自由に動けるようになります。
 
 public class PlayerMove : MonoBehaviour
-{
+{   
+    [SerializeField] private SceneControling sceneControling;
     CharacterController characterController;
     Animator PlayerAnimator;
 
@@ -23,7 +25,6 @@ public class PlayerMove : MonoBehaviour
     //上から順に、現在の速度、移動距離、現在位置
     private float MovingSpeed; //[m/s]
     private Vector3 MoveDirection; //[(m,m,m)]
-    private Vector3 CurrentPositon; //[(m,m,m)]
 
     //プレイヤーがスタン状態であるか、ゴールしたか
     public bool IsStan = false;
@@ -36,22 +37,14 @@ public class PlayerMove : MonoBehaviour
         PlayerAnimator = GetComponentInChildren<Animator>();
         MovingSpeed = 0.0f;
         MoveDirection = Vector3.zero;
-        CurrentPositon = transform.position;
 
         Invoke("AbleToStart",WTFS);
     }
 
     void Update()
     {
-        if (IsStan)
+        if(CanStart)
         {
-            
-        }
-        else if(CanStart)
-        {
-            //現在位置の更新
-            CurrentPositon = transform.position;
-
             //設置している時のみ移動
             if(characterController.isGrounded){
             
@@ -69,12 +62,14 @@ public class PlayerMove : MonoBehaviour
                 }
 
                 //移動
-                //ゴールする前は勝手に前に行く
-                
-
                 if (WasGoal) //ゴールした後は自由に動ける
                 {   
-                    if(Keyboard.current.sKey.isPressed)
+                    //escapeキーで元のシーンにもどる
+                    if (Keyboard.current.escapeKey.isPressed)
+                    {
+                        sceneControling.ToGenerateSerect();
+                    }
+                    else if(Keyboard.current.sKey.isPressed)
                     {
                         MovingSpeed -= AccelerateSpeed * Time.deltaTime;
                         PlayerAnimator.SetBool("run",true);

@@ -19,6 +19,9 @@ public class UIControling_Main : MonoBehaviour
     [SerializeField] private AudioClip[] AudioClips_CountDown;
     AudioSource audioSource;
 
+    //ゴール後に表示する案内テキスト
+    [SerializeField] private TextMeshProUGUI[] GuideTexts;
+
     //パブリックなスコアを変更しないように、それらをコピーして利用
     private int RouteScore;
     private string TimeScore;
@@ -52,6 +55,18 @@ public class UIControling_Main : MonoBehaviour
             audioSource.PlayOneShot(AudioClips_CountDown[(i+1) / Count.Length]);
             yield return new WaitForSeconds(1.0f);
             Count[i].gameObject.SetActive(false);
+        }
+    }
+
+    void Goal_UI()
+    {
+        if (AmidakuziGenerateSetting.Instance.IsOnline)
+        {
+            GuideTexts[1].gameObject.SetActive(true);
+        } 
+        else
+        {
+            GuideTexts[0].gameObject.SetActive(true);
         }
     }
 }

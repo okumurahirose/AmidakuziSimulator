@@ -45,7 +45,7 @@ public class AllPlayersData : MonoBehaviour
     void Start()
     {
         //オフラインのシーンであるならば、プレイヤーオブジェジェクトを指定して保存
-        if(SceneManager.GetActiveScene().name == "Main")
+        if(!AmidakuziGenerateSetting.Instance.IsOnline)
         {   
             //配列の動的配置
             PlayerNum = 1;
@@ -64,15 +64,15 @@ public class AllPlayersData : MonoBehaviour
         WasGoalPlayers[WasGoalPlayersNum] = Player;
         WasGoalPlayersNum++;
 
-        //すべてのプレイヤーがゴールしたら前のシーンに戻る
-        if(WasGoalPlayersNum == PlayerNum)
+        //すべてのプレイヤーがゴールしたら前のシーンに戻る（オンライン時）
+        if(WasGoalPlayersNum == PlayerNum && AmidakuziGenerateSetting.Instance.IsOnline)
         {
-            Invoke("BackToScene_Offline",5.0f);
+            Invoke("BackToScene_Online",5.0f);
         }
     }
 
     //「GenerateSerect」シーンに戻る
-    void BackToScene_Offline()
+    void BackToScene_Online()
     {
         sceneControling.ToGenerateSerect();
     }

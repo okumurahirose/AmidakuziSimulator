@@ -7,8 +7,7 @@ using UnityEngine;
 public class StageGenerating : MonoBehaviour
 {
     [SerializeField] private SerectLineControling serectLineControling;
-
-    [SerializeField] private AllPlayersData allPlayersData;
+    [SerializeField] private UIControling_Main uIControling_Main;
 
     //生成するステージプレハブ、ゴールプレハブ、生成したステージを保存するリスト
     [SerializeField] private GameObject[] Stages;
@@ -145,13 +144,14 @@ public class StageGenerating : MonoBehaviour
         GeneratedStages.Add(target);
         target.transform.parent = transform;
         
-        //ゴール判定オブジェジェクトの「GoalDeciding」コンポーネントにあるAllPlayersDataを設定
+        //ゴール判定オブジェジェクトの「GoalDeciding」コンポーネントにあるUIControlingを設定
         foreach(Transform GoalDecider in target.GetComponentInChildren<Transform>())
         {   
             if(GoalDecider.gameObject.tag == "GoalDecider")
             {
-                GoalDecider.gameObject.GetComponent<GoalDeciding>().allPlayersData = allPlayersData;
+                GoalDecider.gameObject.GetComponent<GoalDeciding>().uIControling_Main = uIControling_Main;
                 break;
+
             }
         }
     }
