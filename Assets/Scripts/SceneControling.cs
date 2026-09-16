@@ -29,6 +29,12 @@ public class SceneControling : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    //オンライン対戦の待機シーンに行きます
+    public void ToOnlineGenerateSerect()
+    {
+        SceneManager.LoadScene("OnlineGenerateSetting");
+    }
+
     //ゲームを終了します
     public void GameQuit()
     {

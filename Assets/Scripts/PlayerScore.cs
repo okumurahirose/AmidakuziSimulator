@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
-    [SerializeField] private PlayerMove playerMove;
+    private PlayerMove playerMove;
 
     //ルートスコア、タイム、ゴールしたか
     public int RouteScore;
@@ -14,6 +14,7 @@ public class PlayerScore : MonoBehaviour
 
     void Start()
     {
+        playerMove = GetComponent<PlayerMove>();
         Timer = 0;
     }
 

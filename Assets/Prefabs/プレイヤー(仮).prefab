@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 2977756277568298548}
   - component: {fileID: 4054602450554498814}
   - component: {fileID: 6563709946038619584}
+  - component: {fileID: 4912897052492081418}
   m_Layer: 0
   m_Name: "\u30D7\u30EC\u30A4\u30E4\u30FC(\u4EEE)"
   m_TagString: Player
@@ -583,12 +584,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1a74f170a01d54493af353ae514147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  sceneControling: {fileID: 0}
   WTFS: 0
   CanStart: 0
   MaxMovingSpeed: 0
   RotationSpeed: 0
   AccelerateSpeed: 0
   IsStan: 0
+--- !u!114 &4912897052492081418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6031643899029616262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  m_InScenePlacedDisabledByDefault: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  m_InScenePlaced: 0
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &6362891976881754623
 GameObject:
   m_ObjectHideFlags: 0
