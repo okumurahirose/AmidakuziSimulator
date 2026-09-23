@@ -58,7 +58,7 @@ public class LobbyCreating : MonoBehaviour
                 Player = new Player(AuthenticationService.Instance.PlayerId){
                     Data = new Dictionary<string, PlayerDataObject>{
                         //ロビーを作った人はホストになることをデータに保存
-                        {$"{AuthenticationService.Instance.PlayerId}",new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member,"Host")}
+                        {"Position",new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member,"Host")}
                     }
                 }
             };
@@ -96,7 +96,7 @@ public class LobbyCreating : MonoBehaviour
         targetTransform.anchoredPosition = new Vector2(0,-AllocationPanelDistance * (AllocationPanelNum-1) + FirstAllocationPanelPoint);
 
         //パネルに付いているロビーを監視するコンポーネントに、監視対象となるロビーを渡す
-        LobbyWatching lobbyWatching = Target.GetComponent<LobbyWatching>();
+        LobbyManaging lobbyWatching = Target.GetComponent<LobbyManaging>();
         lobbyWatching.MyLobby = hostLobby;
     }
 }

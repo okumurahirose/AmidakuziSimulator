@@ -8,7 +8,7 @@ using Unity.Services.Authentication;
 using Newtonsoft.Json;
 using Unity.Android.Gradle.Manifest;
 
-public class LobbyWatching : MonoBehaviour
+public class LobbyManaging : MonoBehaviour
 {
     //監視対象となるロビー、ロビーに入れる人数
     public Lobby MyLobby;
@@ -19,7 +19,7 @@ public class LobbyWatching : MonoBehaviour
     private float Timer = 0.0f;
 
 
-    async Task Update()
+    async void Update()
     {
         if(MyLobby == null)
         {
@@ -51,6 +51,7 @@ public class LobbyWatching : MonoBehaviour
         if(PlayerNum >= MaxPlayerNum)
         {
             Debug.Log("ロビーが満たされました");
+            await StartRelay();
         }
     }
 
@@ -80,7 +81,7 @@ public class LobbyWatching : MonoBehaviour
                 Data = new Dictionary<string, PlayerDataObject>
                 {   
                     //新しく参加したプレイヤーはクライアントになることをデータに保存
-                    {$"{PlayerId}",new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member,"Client")}
+                    {"Position",new PlayerDataObject(PlayerDataObject.VisibilityOptions.Member,"Client")}
                 }
             }
         );
@@ -90,5 +91,23 @@ public class LobbyWatching : MonoBehaviour
 
         Debug.Log($"{PlayerId}がロビーに参加");
         Debug.Log(MyLobby.Data[$"Ready_{PlayerId}"].Value);
+    }
+
+    async Task StartRelay()
+    {
+        Debug.Log("Relayが開始されます");
+        string joinCode = null;
+
+        foreach(Player player in MyLobby.Players)
+        {
+            if(player.Data["Position"].Value == "Host")
+            {
+                joinCode = await ConnectingNetWorksWithRelay.Instance.HostWithRelay(MaxPlayerNum);
+            }
+            else
+            {
+                await ConnectingNetWorksWithRelay.Instance.ClientJoinToRelay(joinCode);
+            }
+        }
     }
 }
