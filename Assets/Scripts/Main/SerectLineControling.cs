@@ -23,7 +23,6 @@ public class SerectLineControling : MonoBehaviour
     [SerializeField] private GameObject PlayTimeCamera;
 
     //キャンバスオブジェクト、UIConrolerオブジェクト
-    [SerializeField] private GameObject SerectTimeCanvas;
     [SerializeField] private GameObject PlayTimeCanvas;
     [SerializeField] private GameObject UIControler_PlayTime;
 

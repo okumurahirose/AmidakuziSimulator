@@ -1,7 +1,7 @@
+using TMPro;
 using UnityEngine;
 
 //「Main」シーンにおいて、プレイヤーが保持するスコアに関する情報を計算、保存します。
-//各プレイヤーオブジェクトに付与され、個別管理となります。
 
 public class PlayerScore : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class PlayerScore : MonoBehaviour
     public int RouteScore;
     public float Timer;
     private bool WasGoal = false;
+    private bool IsStan = false;
 
     void Start()
     {
@@ -20,10 +21,15 @@ public class PlayerScore : MonoBehaviour
 
     void Update()
     {
-        if (!WasGoal && playerMove.CanStart)
+        if (!WasGoal && !IsStan && playerMove.CanStart)
         {
             Timer += Time.deltaTime;
         }
+    }
+
+    void ToStan()
+    {
+        IsStan = true;
     }
 
     void Goal_Score()

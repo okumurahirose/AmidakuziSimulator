@@ -194,50 +194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42063054}
   m_CullTransparentMesh: 1
---- !u!1 &158397969
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 158397971}
-  - component: {fileID: 158397970}
-  m_Layer: 0
-  m_Name: UIControler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &158397970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158397969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2047fa1092c8984e97d1a93575186d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIControling_GenerateSerect
---- !u!4 &158397971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158397969}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672828711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,22 +2017,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2001283802}
     m_Modifications:
-    - target: {fileID: 2175169726890159098, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.00016784668
-      objectReference: {fileID: 0}
-    - target: {fileID: 2751630154551961379, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1.0171967
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672799507257116618, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
-      propertyPath: m_Name
-      value: "\u30B9\u30E9\u30A4\u30C0\u30FC\u30D1\u30CD\u30EB(UI)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 672828712}
     - target: {fileID: 1039088042146826951, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2157,11 +2097,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8210052678647988028, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+    - target: {fileID: 2175169726890159098, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00016784668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751630154551961379, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.0171967
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672799507257116618, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_Name
+      value: "\u30B9\u30E9\u30A4\u30C0\u30FC\u30D1\u30CD\u30EB(UI)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706433868862842253, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3706433868862842253, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+    - target: {fileID: 5166690125460336015, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 672828712}
+    - target: {fileID: 8210052678647988028, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -2191,4 +2147,3 @@ SceneRoots:
   - {fileID: 685377971}
   - {fileID: 1848809260}
   - {fileID: 672828713}
-  - {fileID: 158397971}

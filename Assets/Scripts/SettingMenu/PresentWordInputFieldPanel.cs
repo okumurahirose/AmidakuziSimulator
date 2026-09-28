@@ -38,7 +38,7 @@ public class PresentWordInputFieldPanel : MonoBehaviour
 
         if(Word.text.Length == 0)
         {   
-                UIConroling.DeletePanel(gameObject,Num);
+            UIConroling.DeletePanel(gameObject,Num);
         }
         else 
         {

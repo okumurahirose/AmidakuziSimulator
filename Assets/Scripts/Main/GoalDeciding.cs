@@ -35,7 +35,6 @@ public class GoalDeciding : MonoBehaviour
             playerScore.SendMessage("Goal_Score");
             uIControling_Main.SendMessage("Goal_UI");
             StartCoroutine("GoalMessageToMove");
-            AllPlayersData.Instance.RegisterGoalPlayer(other.gameObject);
             MyCollider.isTrigger = false;
         }
     }

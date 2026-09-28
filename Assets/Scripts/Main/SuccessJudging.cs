@@ -27,15 +27,11 @@ public class SuccessJudging : MonoBehaviour
             //プレイヤーが持つ番号と識別番号が合っていたら成功
             SuccessJudging player = other.gameObject.GetComponent<SuccessJudging>();
             
-            if(SuccessNum == player.SuccessNum)
-            {
-                
-            }
-            else
+            if(SuccessNum != player.SuccessNum)
             {   
                 //失敗したらプレイヤーに失敗判定を送り、スタン状態にする
                 other.gameObject.SendMessage("ToStan");
-                if(gameObject.name == "イベントトリガー")
+                if(gameObject.tag == "SuccessJudger")
                 {
                     animator.SetTrigger("RouteFalt");
                 }

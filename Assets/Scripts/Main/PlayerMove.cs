@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if(CanStart)
+        if(CanStart && !IsStan)
         {
             //設置している時のみ移動
             if(characterController.isGrounded){

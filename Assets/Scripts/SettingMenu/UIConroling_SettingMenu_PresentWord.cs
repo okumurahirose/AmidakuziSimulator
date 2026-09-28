@@ -69,7 +69,7 @@ public class UIConroling_SettingMenu_PresentWord : MonoBehaviour
                                 );
 
             //Contentに追加
-            target.transform.parent = ScrollContent.transform;
+            target.transform.SetParent(ScrollContent.transform);
 
             //配列に追加
             WordInputPanels[Num] = target.GetComponent<PresentWordInputFieldPanel>();

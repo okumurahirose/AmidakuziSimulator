@@ -20,7 +20,7 @@ public class UIControling_Main : MonoBehaviour
     AudioSource audioSource;
 
     //ゴール後に表示する案内テキスト
-    [SerializeField] private TextMeshProUGUI[] GuideTexts;
+    [SerializeField] private TextMeshProUGUI GuideTexts;
 
     //パブリックなスコアを変更しないように、それらをコピーして利用
     private int RouteScore;
@@ -60,13 +60,6 @@ public class UIControling_Main : MonoBehaviour
 
     void Goal_UI()
     {
-        if (AmidakuziGenerateSetting.Instance.IsOnline)
-        {
-            GuideTexts[1].gameObject.SetActive(true);
-        } 
-        else
-        {
-            GuideTexts[0].gameObject.SetActive(true);
-        }
+            GuideTexts.gameObject.SetActive(true);
     }
 }
