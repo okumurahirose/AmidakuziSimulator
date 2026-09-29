@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class SerectTimeCameraControling : MonoBehaviour
 {   
-    
+    //自身のカメラコンポーネント
     private Camera MyCamera;
 
     //カメラのセットポジション
     private Vector3 SetPosition;
+
+    //プレイモード
+    private AmidakuziGenerateSetting.Enum_PlayMode enum_PlayMode;
 
     //あみだくじのライン数、ステージ行数、ステージプレハブの幅、長さ
     private int NumLine;
@@ -20,11 +23,15 @@ public class SerectTimeCameraControling : MonoBehaviour
     //スクロールスピード
     [SerializeField] private float ScrollSpeed;
 
+    //どこまでスクロールで見せるか
+    private float ScrollDistance;
+
     //スクロールが終わったか
     private bool FinishScroll = false;
     void Start()
     {   
         //あみだくじの生成条件を取得
+        enum_PlayMode = AmidakuziGenerateSetting.Instance.PlayMode;
         NumLine = AmidakuziGenerateSetting.Instance.NumLine;
         NumRow = AmidakuziGenerateSetting.Instance.NumRow;
         StageWidth = AmidakuziGenerateSetting.Instance.StageWidth;
@@ -55,6 +62,17 @@ public class SerectTimeCameraControling : MonoBehaviour
         //配置
         transform.position = SetPosition;
 
+        //プレイモードからスクロールで見せる距離を決定
+        switch (enum_PlayMode)
+        {
+            case AmidakuziGenerateSetting.Enum_PlayMode.Nomal:
+                ScrollDistance = NumRow * StageLength;
+                break;
+
+            case AmidakuziGenerateSetting.Enum_PlayMode.Endless:
+                ScrollDistance = 5 * StageLength;
+                break;
+        }
         
     }
 
@@ -63,7 +81,7 @@ public class SerectTimeCameraControling : MonoBehaviour
     {
         if (!FinishScroll)
         {
-            if(transform.position.z < NumRow * StageLength)
+            if(transform.position.z < ScrollDistance)
             {   
                 //あみだくじを上からの見せる
                 transform.Translate(0,-ScrollSpeed * Time.deltaTime,0);

@@ -56,7 +56,6 @@ public class SerectLineControling : MonoBehaviour
         StartCoroutine("FirstSerectedLine");
     }
 
-    // Update is called once per frame
     void Update()
     {   
         //aキーで選択を右に

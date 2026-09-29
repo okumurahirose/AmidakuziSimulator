@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 //「Main」シーンにおいて、あみだくじを生成条件を基に作成し、各ルート情報を配列に保存します。
 
-public class StageGenerating : MonoBehaviour
+public class AmidakuziGenerating_Nomal : MonoBehaviour
 {
     [SerializeField] private SerectLineControling serectLineControling;
     [SerializeField] private UIControling_Main uIControling_Main;
@@ -55,7 +56,7 @@ public class StageGenerating : MonoBehaviour
 
             for(int Line = 0;Line < NumLine;Line++)
             {   
-                //最初と最後のステージは直線
+                //最初と最後のステージは直線で生成
                 if(Row == 0 || Row == NumRow-1)
                 {
                     GenerateStage(Route,Line,Row,false);
@@ -68,6 +69,7 @@ public class StageGenerating : MonoBehaviour
             }
         }
 
+        //ゴールを生成
         for(int Line = 0;Line < NumLine; Line++)
         {
             GenerateGoal(Line);
@@ -108,7 +110,9 @@ public class StageGenerating : MonoBehaviour
             {
                 if (child.CompareTag("ColourTile"))
                 {
-                    serectLineControling.CTOSS[line] = child.gameObject;
+                    //CTOSSはStart関数で初期化されるのでコールチンで初期化を待ってから参照
+                    //CTOSSの内容を設定
+                    StartCoroutine(SetCTOSSObjects(line,child.gameObject));
                     break;
                 }
             }
@@ -174,5 +178,15 @@ public class StageGenerating : MonoBehaviour
             default :
                 return -1;
         }
+    }
+
+    IEnumerator SetCTOSSObjects(int line,GameObject child)
+    {
+        while(serectLineControling.CTOSS.Length == 0)
+        {
+            yield return null; 
+        }
+
+        serectLineControling.CTOSS[line] = child;
     }
 }

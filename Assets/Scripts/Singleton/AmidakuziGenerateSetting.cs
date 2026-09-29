@@ -6,6 +6,14 @@ using UnityEngine;
 public class AmidakuziGenerateSetting : MonoBehaviour
 {
     public static AmidakuziGenerateSetting Instance;
+    
+    //プレイモードを列挙体として宣言
+    public enum Enum_PlayMode
+    {
+        Nomal,Endless
+    }
+
+    public Enum_PlayMode PlayMode;
 
     //あみだくじのライン数、ステージ行数、曲がり角の生成確率
     public int NumLine;
@@ -27,6 +35,16 @@ public class AmidakuziGenerateSetting : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PassingSetting_PlayMode_Nomal()
+    {
+        PlayMode = Enum_PlayMode.Nomal;
+    }
+
+    public void PassingSetting_PlayMode_Endless()
+    {
+        PlayMode = Enum_PlayMode.Endless;
     }
 
     public void PassingSetting_NumLine(float value)
