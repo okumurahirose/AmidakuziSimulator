@@ -529,7 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AmidakuziGenerateSetting
   PlayMode: 0
   NumLine: 5
-  NumRow: 5
+  NumRow: 10
   CornerRate: 50
   StageWidth: 16
   StageLength: 20

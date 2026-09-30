@@ -7,11 +7,15 @@ public class PlayerScore : MonoBehaviour
 {
     private PlayerMove playerMove;
 
-    //ルートスコア、タイム、ゴールしたか
+    //ルートスコア、タイム、ゴールしたか、スタン状態か
     public int RouteScore;
     public float Timer;
     private bool WasGoal = false;
     private bool IsStan = false;
+
+    //エンドレスモードにおいて、スピードアップのための基準値、基準値を上げるための定数
+    private float CheckRouteScoreBase = 50.0f;
+    private float MultipeBase = 1.5f;
 
     void Start()
     {
@@ -24,6 +28,13 @@ public class PlayerScore : MonoBehaviour
         if (!WasGoal && !IsStan && playerMove.CanStart)
         {
             Timer += Time.deltaTime;
+        }
+
+        //エンドレスモードでありスコアが一定値を超えた時
+        if(AmidakuziGenerateSetting.Instance.PlayMode == AmidakuziGenerateSetting.Enum_PlayMode.Endless && RouteScore > CheckRouteScoreBase)
+        {
+            playerMove.SendMessage("MaxSpeedUP");
+            CheckRouteScoreBase *= MultipeBase;
         }
     }
 

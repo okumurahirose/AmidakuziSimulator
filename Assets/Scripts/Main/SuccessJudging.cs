@@ -13,7 +13,7 @@ public class SuccessJudging : MonoBehaviour
     void Start()
     {   
         //このオブジェクトのタグがSuccessJudgerだった場合にアニメーターを取得
-        if(transform.tag == "SuccessJudger")
+        if(tag == "SuccessJudger")
         {
             animator = GetComponent<Animator>();
         }
@@ -22,7 +22,7 @@ public class SuccessJudging : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {   
         //SuccessJudger側で成功判定を行う
-        if(transform.tag == "SuccessJudger")
+        if(tag == "SuccessJudger")
         {   
             //プレイヤーが持つ番号と識別番号が合っていたら成功
             SuccessJudging player = other.gameObject.GetComponent<SuccessJudging>();
@@ -31,7 +31,7 @@ public class SuccessJudging : MonoBehaviour
             {   
                 //失敗したらプレイヤーに失敗判定を送り、スタン状態にする
                 other.gameObject.SendMessage("ToStan");
-                if(gameObject.tag == "SuccessJudger")
+                if(animator != null)
                 {
                     animator.SetTrigger("RouteFalt");
                 }

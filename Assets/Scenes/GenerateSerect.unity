@@ -1459,7 +1459,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1848809259}
         m_TargetAssemblyTypeName: SceneControling, Assembly-CSharp
-        m_MethodName: ToMain
+        m_MethodName: ToMain_Nomal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3142,7 +3142,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1848809259}
         m_TargetAssemblyTypeName: SceneControling, Assembly-CSharp
-        m_MethodName: ToMain
+        m_MethodName: ToMain_Endless
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

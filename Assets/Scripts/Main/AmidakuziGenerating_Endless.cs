@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //「Main」シーンにおいて、あみだくじを生成条件を基に作成し、各ルート情報を配列に保存します。
@@ -80,7 +81,15 @@ public class AmidakuziGenerating_Endless : MonoBehaviour
                 Corner = GenerateStage(Route,Line,CurrentRow,Corner);
             }
 
+            //行数を増やす
             CurrentRow++;
+
+            //通り過ぎた一番前のステージを消す
+            for(int i = 0;i < NumLine; i++)
+            {
+                Destroy(GeneratedStages[0]);
+                GeneratedStages.RemoveAt(0);
+            }
         }
     }
 
@@ -149,6 +158,7 @@ public class AmidakuziGenerating_Endless : MonoBehaviour
         if(row == 0)
             return line;
 
+        //曲がり角では絶対にCornerRightが先に現れるためそこで番号を入れ替える
         if(hantei == KindofStage.CornerRight)
         {
             Swap(ref Route[line],ref Route[line+1]);

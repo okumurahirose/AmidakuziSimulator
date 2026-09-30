@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float AccelerateSpeed; //[m/s^2]
     private const float Glavity = -9.81f; //[m/s^2]
 
-    //上から順に、現在の速度、移動距離、現在位置
+    //上から順に、現在の速度、移動距離
     private float MovingSpeed; //[m/s]
     private Vector3 MoveDirection; //[(m,m,m)]
 
@@ -108,6 +108,12 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //スピードを一定数あげる
+    void MaxSpeedUP()
+    {
+        MaxMovingSpeed += 1.0f;
+    }
+
     //スタン状態にする
     void ToStan()
     {
@@ -115,11 +121,13 @@ public class PlayerMove : MonoBehaviour
         PlayerAnimator.SetTrigger("Collision");
     }
 
+    //ゴール状態にする
     void Goal_Move()
     {   
         WasGoal = true;
     }
 
+    //スタート可能状態にする
     void AbleToStart()
     {
         CanStart = true;

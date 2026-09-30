@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Nomal.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Main_Endless.unity
+    guid: e774a5795d0e7ab46b02d4b13f1c5304
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: da43c822a71735b4f8a2aded644875a6
   m_configObjects:

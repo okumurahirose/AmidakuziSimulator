@@ -24,9 +24,14 @@ public class SceneControling : MonoBehaviour
     }
 
     //ゲームのメインとなるプレイシーンに行きます
-    public void ToMain()
+    public void ToMain_Nomal()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main_Nomal");
+    }
+
+    public void ToMain_Endless()
+    {
+        SceneManager.LoadScene("Main_Endless");
     }
 
     //オンライン対戦の待機シーンに行きます
