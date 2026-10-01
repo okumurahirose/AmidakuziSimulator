@@ -15,6 +15,9 @@ public class AmidakuziGenerating_Nomal : MonoBehaviour
     [SerializeField] private GameObject[] Goals;
     private List<GameObject> GeneratedStages = new List<GameObject>();
 
+    //あみだくじの逆走による奈落への落下を防ぐ蓋オブジェジェクト
+    [SerializeField] private GameObject Cover;
+
     //あみだくじのライン数、ステージ行数、曲がり角の生成確率
     private int NumLine;
     private int NumRow;
@@ -74,6 +77,10 @@ public class AmidakuziGenerating_Nomal : MonoBehaviour
         {
             GenerateGoal(Line);
         }
+
+        //蓋オブジェジェクトのサイズと位置を設定
+        Cover.transform.localScale = new Vector3((NumLine - 0.5f) * StageWidth,9.0f,1.0f);
+        Cover.transform.position = new Vector3(-(NumLine - 1) * StageWidth / 2,4.0f,-10.5f);
     }
 
     //ステージを生成する。引数は(列番号、行番号、隣のステージが曲がり角であるか)

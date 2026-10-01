@@ -15,6 +15,9 @@ public class AmidakuziGenerating_Endless : MonoBehaviour
     [SerializeField] private GameObject[] Stages;
     private List<GameObject> GeneratedStages = new List<GameObject>();
 
+    //あみだくじの逆走による奈落への落下を防ぐ蓋オブジェジェクト
+    [SerializeField] private GameObject Cover;
+
     //あみだくじのライン数、曲がり角の生成確率
     private int NumLine;
     private float CornerRate;
@@ -66,6 +69,10 @@ public class AmidakuziGenerating_Endless : MonoBehaviour
                 }
             }
         }
+
+        //蓋オブジェジェクトのサイズと位置を設定
+        Cover.transform.localScale = new Vector3((NumLine - 0.5f) * StageWidth,9.0f,1.0f);
+        Cover.transform.position = new Vector3(-(NumLine - 1) * StageWidth / 2,4.0f,-10.5f);
     }
 
     void Update()
@@ -90,6 +97,9 @@ public class AmidakuziGenerating_Endless : MonoBehaviour
                 Destroy(GeneratedStages[0]);
                 GeneratedStages.RemoveAt(0);
             }
+
+            //蓋オブジェジェクトもステージを消した分前進させる
+            Cover.transform.Translate(0,0,20.0f);
         }
     }
 
