@@ -36,6 +36,7 @@ public class GoalDeciding : MonoBehaviour
             uIControling_Main.SendMessage("Goal_UI");
             StartCoroutine("GoalMessageToMove");
             MyCollider.isTrigger = false;
+            SEManaging.Instance.PlayGoalSE();
         }
     }
 

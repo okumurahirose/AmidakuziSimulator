@@ -66,7 +66,8 @@ public class PlayerMove : MonoBehaviour
                 {   
                     //escapeキーで元のシーンにもどる
                     if (Keyboard.current.escapeKey.isPressed)
-                    {
+                    {   
+                        BGMManaging.Instance.PlayBGM(0.05f);
                         sceneControling.ToGenerateSerect();
                     }
                     else if(Keyboard.current.sKey.isPressed)

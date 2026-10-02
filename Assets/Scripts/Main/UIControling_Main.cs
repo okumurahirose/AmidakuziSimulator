@@ -14,9 +14,8 @@ public class UIControling_Main : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Text_RouteScore;
     [SerializeField] private TextMeshProUGUI Text_TimeScore;
 
-    //カウントダウンで使用する画像と効果音
+    //カウントダウンで使用する画像
     [SerializeField] private Image[] Count;
-    [SerializeField] private AudioClip[] AudioClips_CountDown;
     AudioSource audioSource;
 
     //ゴール後に表示する案内テキスト
@@ -52,7 +51,7 @@ public class UIControling_Main : MonoBehaviour
         {
             Count[i].gameObject.SetActive(true);
             Debug.Log((i+1) % Count.Length);
-            audioSource.PlayOneShot(AudioClips_CountDown[(i+1) / Count.Length]);
+            SEManaging.Instance.PlayStartCountDownSE((i+1) / Count.Length);
             yield return new WaitForSeconds(1.0f);
             Count[i].gameObject.SetActive(false);
         }

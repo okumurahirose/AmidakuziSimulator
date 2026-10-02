@@ -9,6 +9,7 @@ TagManager:
   - InputField
   - InputFieldNumber
   - GoalDecider
+  - ClosingWall
   layers:
   - Default
   - TransparentFX

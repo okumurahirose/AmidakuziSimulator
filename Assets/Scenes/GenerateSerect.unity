@@ -1386,6 +1386,7 @@ GameObject:
   - component: {fileID: 1388058922}
   - component: {fileID: 1388058921}
   - component: {fileID: 1388058920}
+  - component: {fileID: 1388058923}
   m_Layer: 5
   m_Name: "\u30B9\u30BF\u30FC\u30C8\u30DC\u30BF\u30F3"
   m_TagString: Untagged
@@ -1481,6 +1482,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1388058923}
+        m_TargetAssemblyTypeName: ButtonMediating, Assembly-CSharp
+        m_MethodName: PlayButtonSE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1388058921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,6 +1532,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388058918}
   m_CullTransparentMesh: 1
+--- !u!114 &1388058923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388058918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee74eae417ee9b84087e29905817c5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonMediating
 --- !u!1 &1434424133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1969,7 @@ GameObject:
   - component: {fileID: 1587657760}
   - component: {fileID: 1587657759}
   - component: {fileID: 1587657758}
+  - component: {fileID: 1587657761}
   m_Layer: 5
   m_Name: "\u623B\u308B\u30DC\u30BF\u30F3"
   m_TagString: Untagged
@@ -2027,6 +2053,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1587657761}
+        m_TargetAssemblyTypeName: ButtonMediating, Assembly-CSharp
+        m_MethodName: PlayButtonSE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1587657759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2065,6 +2103,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587657756}
   m_CullTransparentMesh: 1
+--- !u!114 &1587657761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587657756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee74eae417ee9b84087e29905817c5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonMediating
 --- !u!224 &1616407182 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1039088042146826951, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
@@ -2219,6 +2269,7 @@ GameObject:
   - component: {fileID: 1731773361}
   - component: {fileID: 1731773360}
   - component: {fileID: 1731773359}
+  - component: {fileID: 1731773362}
   m_Layer: 5
   m_Name: "\u30E9\u30F3\u30C0\u30E0\u751F\u6210\u30DC\u30BF\u30F3"
   m_TagString: Untagged
@@ -2326,6 +2377,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1731773362}
+        m_TargetAssemblyTypeName: ButtonMediating, Assembly-CSharp
+        m_MethodName: PlayButtonSE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1731773360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,6 +2427,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731773357}
   m_CullTransparentMesh: 1
+--- !u!114 &1731773362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731773357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee74eae417ee9b84087e29905817c5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonMediating
 --- !u!1 &1806098806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,6 +2451,7 @@ GameObject:
   - component: {fileID: 1806098810}
   - component: {fileID: 1806098809}
   - component: {fileID: 1806098808}
+  - component: {fileID: 1806098811}
   m_Layer: 5
   m_Name: "\u30E9\u30F3\u30C0\u30E0\u751F\u6210\u30DC\u30BF\u30F3"
   m_TagString: Untagged
@@ -2471,6 +2547,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1806098811}
+        m_TargetAssemblyTypeName: ButtonMediating, Assembly-CSharp
+        m_MethodName: PlayButtonSE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1806098809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2509,6 +2597,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806098806}
   m_CullTransparentMesh: 1
+--- !u!114 &1806098811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806098806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee74eae417ee9b84087e29905817c5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonMediating
 --- !u!114 &1819462732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6665990781009089508, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}
@@ -3069,6 +3169,7 @@ GameObject:
   - component: {fileID: 2111935410}
   - component: {fileID: 2111935409}
   - component: {fileID: 2111935408}
+  - component: {fileID: 2111935411}
   m_Layer: 5
   m_Name: "\u30B9\u30BF\u30FC\u30C8\u30DC\u30BF\u30F3"
   m_TagString: Untagged
@@ -3164,6 +3265,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2111935411}
+        m_TargetAssemblyTypeName: ButtonMediating, Assembly-CSharp
+        m_MethodName: PlayButtonSE
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2111935409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3202,6 +3315,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111935406}
   m_CullTransparentMesh: 1
+--- !u!114 &2111935411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111935406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee74eae417ee9b84087e29905817c5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonMediating
 --- !u!224 &3397772808663969673 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1039088042146826951, guid: 65e276a0f38ca6740ad566061d2c3077, type: 3}

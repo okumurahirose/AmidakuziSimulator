@@ -11,15 +11,11 @@ public class ScoreGiving : MonoBehaviour
     //プレイヤーのスコアコンポーネント
     private PlayerScore playerScore;
 
-    private AudioSource audioSource_Player;
-    [SerializeField] private AudioClip SE;
-
     void OnTriggerEnter(Collider other)
     {   
         playerScore = other.gameObject.GetComponent<PlayerScore>();
-        audioSource_Player = other.gameObject.GetComponent<AudioSource>();
         playerScore.RouteScore += PlusScore;
-        audioSource_Player.PlayOneShot(SE);
+        SEManaging.Instance.PlayRouteScoreSE();
         gameObject.SetActive(false);
     }
 }

@@ -14,6 +14,9 @@ public class WallClosing : MonoBehaviour
     private int NumLine;
     private int NumRow;
 
+    //プレイモード
+    private AmidakuziGenerateSetting.Enum_PlayMode enum_PlayMode;
+
 
     //壁の高さ、壁の幅、ステージ一個の幅、Scale(1,1)に対するマテリアルのタイリング比
     private float WallHeight = 8.0f; //[m]
@@ -30,6 +33,7 @@ public class WallClosing : MonoBehaviour
         NumRow = AmidakuziGenerateSetting.Instance.NumRow;
         StageWidth = AmidakuziGenerateSetting.Instance.StageWidth;
         StageLength = AmidakuziGenerateSetting.Instance.StageLength;
+        enum_PlayMode  = AmidakuziGenerateSetting.Instance.PlayMode;
 
         //壁のサイズとポジションをあみだくじの大きさに合わせて調整
         WallWidth = NumLine * StageWidth;
@@ -40,11 +44,13 @@ public class WallClosing : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.z < NumRow * StageLength + StageLength /2 - 1.0f)
+        //ノーマルモードの場合ゴールとの境目で止まる
+        if (enum_PlayMode == AmidakuziGenerateSetting.Enum_PlayMode.Nomal && transform.position.z > NumRow * StageLength + StageLength /2 - 1.0f)
         {
-            //壁を前進させる
-            transform.Translate(0,0,ClosingSpeed * Time.deltaTime);
+            return;
         }
         
+        //壁を前進させる
+        transform.Translate(0,0,ClosingSpeed * Time.deltaTime);   
     }
 }

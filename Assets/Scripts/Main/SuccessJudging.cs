@@ -9,6 +9,7 @@ public class SuccessJudging : MonoBehaviour
     //このルートを通れる識別番号
     public int SuccessNum; //[m]
     Animator animator;
+    AudioSource audioSourse;
 
     void Start()
     {   
@@ -16,27 +17,30 @@ public class SuccessJudging : MonoBehaviour
         if(tag == "SuccessJudger")
         {
             animator = GetComponent<Animator>();
+            audioSourse = GetComponent<AudioSource>();
         }
     }
 
     void OnTriggerEnter(Collider other)
     {   
-        //SuccessJudger側で成功判定を行う
-        if(tag == "SuccessJudger")
-        {   
+        //SuccessJudger、ClosingWall側で成功判定を行う
+        if(tag == "SuccessJudger" || tag == "ClosingWall")
+        {
             //プレイヤーが持つ番号と識別番号が合っていたら成功
             SuccessJudging player = other.gameObject.GetComponent<SuccessJudging>();
-            
+           
             if(SuccessNum != player.SuccessNum)
             {   
+                
                 //失敗したらプレイヤーに失敗判定を送り、スタン状態にする
                 other.gameObject.SendMessage("ToStan");
-                if(animator != null)
+                
+                if(tag == "SuccessJudger")
                 {
                     animator.SetTrigger("RouteFalt");
+                    audioSourse.Play();
                 }
-                
-            }
+            } 
         }
     }
 

@@ -7,7 +7,7 @@ public class SceneControling : MonoBehaviour
 {   
     //タイトルシーンに行きます
     public void ToTitle()
-    {
+    {   
         SceneManager.LoadScene("Title");
     }
     
@@ -19,25 +19,21 @@ public class SceneControling : MonoBehaviour
 
     //ゲームの汎用設定シーンに行きます
     public void ToSettingMenu()
-    {
+    {   
         SceneManager.LoadScene("SettingMenu");
     }
 
     //ゲームのメインとなるプレイシーンに行きます
     public void ToMain_Nomal()
     {
+        BGMManaging.Instance.EndBGM();
         SceneManager.LoadScene("Main_Nomal");
     }
 
     public void ToMain_Endless()
     {
+        BGMManaging.Instance.EndBGM();
         SceneManager.LoadScene("Main_Endless");
-    }
-
-    //オンライン対戦の待機シーンに行きます
-    public void ToOnlineGenerateSerect()
-    {
-        SceneManager.LoadScene("OnlineGenerateSetting");
     }
 
     //ゲームを終了します
