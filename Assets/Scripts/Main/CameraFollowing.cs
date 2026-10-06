@@ -18,7 +18,7 @@ public class CameraFollowing : MonoBehaviour
     private Vector3 FuturePosition;
 
     void Start()
-    {   
+    {  
         //対象オブジェジェクトの設定
         TargetObject = Player.gameObject;
 
@@ -32,7 +32,7 @@ public class CameraFollowing : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!Player.IsStan)
+        if (!GameManaging.Instance.IsStan)
         {
             //移動予定地の更新
             FuturePosition.x = TargetObject.transform.position.x - Distance.z * Mathf.Sin(TargetObject.transform.eulerAngles.y * Mathf.Deg2Rad);

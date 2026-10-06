@@ -19,7 +19,6 @@ public class SerectLineControling : MonoBehaviour
 
     //カメラオブジェクト
     [SerializeField] private GameObject SerectTimeCamera;
-    private SerectTimeCameraControling serectTimeCameraControling;
     [SerializeField] private GameObject PlayTimeCamera;
 
     //キャンバスオブジェクト、UIConrolerオブジェクト
@@ -40,9 +39,6 @@ public class SerectLineControling : MonoBehaviour
         //あみだくじの情報を取得
         NumLine = AmidakuziGenerateSetting.Instance.NumLine;
         StageWidth = AmidakuziGenerateSetting.Instance.StageWidth;
-
-        //コンポーネントの取得
-        serectTimeCameraControling = SerectTimeCamera.GetComponent<SerectTimeCameraControling>();
 
         //配列の動的確保
         CTOSS = new GameObject[NumLine];
@@ -84,6 +80,8 @@ public class SerectLineControling : MonoBehaviour
             UIControler_PlayTime.SetActive(true);
             ClosingWall.SetActive(true);
             Player.SetActive(true);
+
+            GameManaging.Instance.StartCountDown();
 
             //BGMを流す
             BGMManaging.Instance.PlayBGM(0.1f);

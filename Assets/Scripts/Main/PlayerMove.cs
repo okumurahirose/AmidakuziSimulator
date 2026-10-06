@@ -9,12 +9,8 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {   
     [SerializeField] private SceneControling sceneControling;
-    CharacterController characterController;
-    Animator PlayerAnimator;
-
-    //シーンが移動してからプレイヤーがスタートするまでの待ち時間、待ち時間が終わったか
-    [SerializeField] private float WTFS; // [s] (WaitingTimeForStartの略)
-    public bool CanStart = false;
+    private CharacterController characterController;
+    private Animator PlayerAnimator;
 
     //上から順に、最大速度、角速度、加速度、重力
     [SerializeField] private float MaxMovingSpeed; //[m/s]
@@ -26,10 +22,6 @@ public class PlayerMove : MonoBehaviour
     private float MovingSpeed; //[m/s]
     private Vector3 MoveDirection; //[(m,m,m)]
 
-    //プレイヤーがスタン状態であるか、ゴールしたか
-    public bool IsStan = false;
-    private bool WasGoal = false;
-
     void Start()
     {
         //コンポーネントの取得と各種変数の初期化
@@ -37,100 +29,77 @@ public class PlayerMove : MonoBehaviour
         PlayerAnimator = GetComponentInChildren<Animator>();
         MovingSpeed = 0.0f;
         MoveDirection = Vector3.zero;
-
-        Invoke("AbleToStart",WTFS);
     }
 
     void Update()
     {
-        if(CanStart && !IsStan)
+        if(!GameManaging.Instance.CanStart) return;
+        if(GameManaging.Instance.IsStan)
         {
-            //設置している時のみ移動
-            if(characterController.isGrounded){
+            PlayerAnimator.SetTrigger("Collision");
+            return;
+        }
+        
+        //設置している時のみ移動
+        if(characterController.isGrounded){
             
-                //設置しているため、重力によるy軸への影響はない
-                MoveDirection.y = 0;
+            //設置しているため、重力によるy軸への影響はない
+            MoveDirection.y = 0;
 
-                //回転
-                if (Keyboard.current.aKey.isPressed)
-                {
-                    transform.Rotate(0,-RotationSpeed * Time.deltaTime,0);
-                }
-                if (Keyboard.current.dKey.isPressed)
-                {
-                    transform.Rotate(0,RotationSpeed * Time.deltaTime,0);
-                }
+            //回転
+            if (Keyboard.current.aKey.isPressed)
+            {
+                transform.Rotate(0,-RotationSpeed * Time.deltaTime,0);
+            }
+            if (Keyboard.current.dKey.isPressed)
+            {
+                transform.Rotate(0,RotationSpeed * Time.deltaTime,0);
+            }
 
-                //移動
-                if (WasGoal) //ゴールした後は自由に動ける
-                {   
-                    //escapeキーで元のシーンにもどる
-                    if (Keyboard.current.escapeKey.isPressed)
-                    {   
-                        BGMManaging.Instance.PlayBGM(0.05f);
-                        sceneControling.ToGenerateSerect();
-                    }
-                    else if(Keyboard.current.sKey.isPressed)
-                    {
-                        MovingSpeed -= AccelerateSpeed * Time.deltaTime;
-                        PlayerAnimator.SetBool("run",true);
-                    }
-                    else if(Keyboard.current.wKey.isPressed)
-                    {
-                        MovingSpeed += AccelerateSpeed * Time.deltaTime;
-                        PlayerAnimator.SetBool("run",true);
-                    }
-                    else
-                    {
-                        MovingSpeed = 0;
-                        PlayerAnimator.SetBool("run",false);
-                    }
+            //移動
+            if (GameManaging.Instance.WasGoal) //ゴールした後は自由に動ける
+            {   
+                if(Keyboard.current.sKey.isPressed)
+                {
+                    MovingSpeed -= AccelerateSpeed * Time.deltaTime;
+                    PlayerAnimator.SetBool("run",true);
                 }
-                else //ゴールする前は勝手に前に進む
+                else if(Keyboard.current.wKey.isPressed)
                 {
                     MovingSpeed += AccelerateSpeed * Time.deltaTime;
                     PlayerAnimator.SetBool("run",true);
                 }
+                else
+                {
+                    MovingSpeed = 0;
+                    PlayerAnimator.SetBool("run",false);
+                }
+            }
+            else //ゴールする前は勝手に前に進む
+            {
+                MovingSpeed += AccelerateSpeed * Time.deltaTime;
+                PlayerAnimator.SetBool("run",true);
+            }
 
-                MovingSpeed = Mathf.Clamp(MovingSpeed,-MaxMovingSpeed,MaxMovingSpeed);
+            MovingSpeed = Mathf.Clamp(MovingSpeed,-MaxMovingSpeed,MaxMovingSpeed);
 
                 
-                MoveDirection.z = MovingSpeed * Time.deltaTime * Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
-                MoveDirection.x = MovingSpeed * Time.deltaTime * Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
+            MoveDirection.z = MovingSpeed * Time.deltaTime * Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
+            MoveDirection.x = MovingSpeed * Time.deltaTime * Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.y);
 
-            }
-            else
-            {
-                MoveDirection.y += Glavity * Time.deltaTime * Time.deltaTime / 2;
-            }
-
-            //移動の実施
-            characterController.Move(MoveDirection);
         }
+        else
+        {
+            MoveDirection.y += Glavity * Time.deltaTime * Time.deltaTime / 2;
+        }
+
+        //移動の実施
+        characterController.Move(MoveDirection);
     }
 
     //スピードを一定数あげる
     void MaxSpeedUP()
     {
         MaxMovingSpeed += 1.0f;
-    }
-
-    //スタン状態にする
-    void ToStan()
-    {
-        IsStan = true;
-        PlayerAnimator.SetTrigger("Collision");
-    }
-
-    //ゴール状態にする
-    void Goal_Move()
-    {   
-        WasGoal = true;
-    }
-
-    //スタート可能状態にする
-    void AbleToStart()
-    {
-        CanStart = true;
     }
 }

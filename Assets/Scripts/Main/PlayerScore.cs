@@ -7,11 +7,9 @@ public class PlayerScore : MonoBehaviour
 {
     private PlayerMove playerMove;
 
-    //ルートスコア、タイム、ゴールしたか、スタン状態か
+    //ルートスコア、タイム
     public int RouteScore;
     public float Timer;
-    private bool WasGoal = false;
-    private bool IsStan = false;
 
     //エンドレスモードにおいて、スピードアップのための基準値、基準値を上げるための定数
     private float CheckRouteScoreBase = 50.0f;
@@ -25,7 +23,7 @@ public class PlayerScore : MonoBehaviour
 
     void Update()
     {
-        if (!WasGoal && !IsStan && playerMove.CanStart)
+        if (!GameManaging.Instance.WasGoal && !GameManaging.Instance.IsStan && GameManaging.Instance.CanStart)
         {
             Timer += Time.deltaTime;
         }
@@ -37,15 +35,4 @@ public class PlayerScore : MonoBehaviour
             CheckRouteScoreBase *= MultipeBase;
         }
     }
-
-    void ToStan()
-    {
-        IsStan = true;
-    }
-
-    void Goal_Score()
-    {
-        WasGoal = true;
-    }
-    
 }

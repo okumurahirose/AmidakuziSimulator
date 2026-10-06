@@ -126,9 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a014e2d6f49326b4f9b2fe51a73641e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalDeciding
+  gameManaging: {fileID: 8120756288731130079, guid: 5215f444ad48c96449104ed1fca457ab, type: 3}
   uIControling_Main: {fileID: 0}
-  SE_1: {fileID: 8300000, guid: 4caf069a629d7a240b5045b10bfd3d12, type: 3}
-  SE_2: {fileID: 8300000, guid: b1d7f3789ee6f684880fc5006dc06728, type: 3}
 --- !u!82 &-5462006135838081258
 AudioSource:
   m_ObjectHideFlags: 0

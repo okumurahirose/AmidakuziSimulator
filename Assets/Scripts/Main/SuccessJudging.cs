@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 //「Main」シーンにおいて、プレイヤーが正しい道を通っているかを判断します。
@@ -9,7 +10,6 @@ public class SuccessJudging : MonoBehaviour
     //このルートを通れる識別番号
     public int SuccessNum; //[m]
     Animator animator;
-    AudioSource audioSourse;
 
     void Start()
     {   
@@ -17,7 +17,6 @@ public class SuccessJudging : MonoBehaviour
         if(tag == "SuccessJudger")
         {
             animator = GetComponent<Animator>();
-            audioSourse = GetComponent<AudioSource>();
         }
     }
 
@@ -32,13 +31,13 @@ public class SuccessJudging : MonoBehaviour
             if(SuccessNum != player.SuccessNum)
             {   
                 
-                //失敗したらプレイヤーに失敗判定を送り、スタン状態にする
-                other.gameObject.SendMessage("ToStan");
+                //失敗したらGameManagerに失敗判定を送り、スタン状態にする
+                GameManaging.Instance.ToStan();
                 
                 if(tag == "SuccessJudger")
                 {
                     animator.SetTrigger("RouteFalt");
-                    audioSourse.Play();
+                    SEManaging.Instance.PlayStanSE();
                 }
             } 
         }
