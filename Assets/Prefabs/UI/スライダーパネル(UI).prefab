@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 57.699997, y: -1.0171909}
+  m_AnchoredPosition: {x: 57.69998, y: -1.0172119}
   m_SizeDelta: {x: 106.296295, y: -10.867699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3601065740567279244
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "\u30E9\u30A4\u30F3\u6570"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e9c77b80ef9fc044875fe33a3390fbe, type: 2}
   m_sharedMaterial: {fileID: 8344747153892070432, guid: 7e9c77b80ef9fc044875fe33a3390fbe, type: 2}
@@ -348,7 +348,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3672799507257116618}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 2175169726890159098}
   - component: {fileID: 5166690125460336015}
   - component: {fileID: 6665990781009089508}
+  - component: {fileID: 5685552717645747677}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -438,7 +439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 20.705002, y: -0.00016403198}
+  m_AnchoredPosition: {x: 20.705078, y: -0.00016784668}
   m_SizeDelta: {x: -202, y: 26.5481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5166690125460336015
@@ -485,13 +486,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 8210052678647988028}
   m_HandleRect: {fileID: 3706433868862842253}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 1
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5685552717645747677}
+        m_TargetAssemblyTypeName: AmidakuziGenerateSettingMediating, Assembly-CSharp
+        m_MethodName: PassingSetting_NumLine
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6665990781009089508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +518,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slider_TextAdjusting
   NumberBoard: {fileID: 1568149280870180368}
+--- !u!114 &5685552717645747677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4815080276341843978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c3d910e2f845e4eb6d6aea6dc733e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AmidakuziGenerateSettingMediating
 --- !u!1 &4839278378938121124
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.200012, y: 0}
+  m_AnchoredPosition: {x: -37.19998, y: 0}
   m_SizeDelta: {x: 61.060486, y: -12.902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &708722591991716793

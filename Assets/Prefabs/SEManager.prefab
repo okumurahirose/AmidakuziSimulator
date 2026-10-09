@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c3adb87da1421414dbb5292e88a1a020, type: 3}
   RouteScoreSE: {fileID: 8300000, guid: 688867e5afe315f4dbeb29e3ba040e7a, type: 3}
   StanSE: {fileID: 8300000, guid: 1c7d0cbd257e61f46ab0b40c54c77345, type: 3}
+  StanPanelSE: {fileID: 8300000, guid: 5aac200dd1e335a4280e6833d803deb6, type: 3}
   GoalSE:
   - {fileID: 8300000, guid: 4caf069a629d7a240b5045b10bfd3d12, type: 3}
   - {fileID: 8300000, guid: b1d7f3789ee6f684880fc5006dc06728, type: 3}

@@ -36,29 +36,4 @@ public class AmidakuziGenerateSetting : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void PassingSetting_PlayMode_Nomal()
-    {
-        PlayMode = Enum_PlayMode.Nomal;
-    }
-
-    public void PassingSetting_PlayMode_Endless()
-    {
-        PlayMode = Enum_PlayMode.Endless;
-    }
-
-    public void PassingSetting_NumLine(float value)
-    {
-        NumLine = (int)value;
-    }
-
-    public void PassingSetting_NumRow(float value)
-    {
-        NumRow = (int)value;
-    }
-
-    public void PassingSetting_CornerRate(float value)
-    {
-        CornerRate = value;
-    }
 }

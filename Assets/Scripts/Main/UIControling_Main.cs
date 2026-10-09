@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,12 +47,17 @@ public class UIControling_Main : MonoBehaviour
         Text_RouteScore.text = "RouteScore : " + RouteScore;
         Text_TimeScore.text = "TimeScore : " + TimeScore;
 
-        if (GameManaging.Instance.WasGoal || GameManaging.Instance.IsStan)
+        if (GameManaging.Instance.IsStan)
         {
             GuideTexts.gameObject.SetActive(true);
             Invoke("DisplayStanPanel",1.0f);
             StopUpdate = true;
         }
+        else if (GameManaging.Instance.WasGoal)
+        {
+            GuideTexts.gameObject.SetActive(true);
+        }
+        
     }
 
     public void DisplayCountImage(int index)

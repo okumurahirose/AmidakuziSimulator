@@ -154,6 +154,9 @@ public class AmidakuziGenerating_Nomal : MonoBehaviour
                                     );
         GeneratedStages.Add(target);
         target.transform.parent = transform;
+
+        //ゴールに表示されるテキストの番号
+        target.GetComponent<UIControling_GoalPresentText>().MyNumber = line;
         
         //ゴール判定オブジェジェクトの「GoalDeciding」コンポーネントにあるUIControlingを設定
         foreach(Transform GoalDecider in target.GetComponentInChildren<Transform>())
