@@ -22,7 +22,7 @@ Unityで製作した、あみだくじ × ランゲームです。
 
 (例)
 ![Serect](./Screenshots/GameSerect_1.png)
-![Play](./Screenshots/GamePlay.png)
+![Play](./Screenshots/GamePlay_1.png)
 ![Stage](./Screenshots/StageGenerate.png)
 
 ## 主な機能
